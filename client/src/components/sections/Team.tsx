@@ -51,11 +51,21 @@ export default function Team() {
               className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all text-center"
             >
               {member.image ? (
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30"
-                />
+                member.name === "Poppy" ? (
+                  <div className="overflow-hidden rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30" style={{ maxHeight: '220px' }}>
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full"
+                    />
+                  </div>
+                ) : (
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30"
+                  />
+                )
               ) : (
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#e61e50] to-[#e61e50]/50 mx-auto mb-6 flex items-center justify-center text-3xl font-bold">
                   {member.name.split(' ').map(n => n[0]).join('')}
