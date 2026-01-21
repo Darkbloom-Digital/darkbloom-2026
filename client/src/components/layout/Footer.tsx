@@ -1,4 +1,4 @@
-import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768954239512.png";
+import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768955288967.png";
 
 export default function Footer() {
   return (

@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768954239512.png";
+import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768955288967.png";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +30,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group cursor-pointer -my-8">
+        <Link href="/" className="flex items-center gap-2 group cursor-pointer">
           <img 
             src={logo} 
             alt="Darkbloom Digital" 
