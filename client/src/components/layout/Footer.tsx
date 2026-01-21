@@ -6,7 +6,11 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="flex flex-col items-center md:items-start gap-4">
-             <img src={logo} alt="Darkbloom Digital" className="h-10 w-auto object-contain rounded-md" />
+             <img 
+               src={logo} 
+               alt="Darkbloom Digital" 
+               className="h-10 w-auto object-contain mix-blend-screen invert hue-rotate-180 contrast-125 opacity-90" 
+             />
              <p className="text-white/40 text-sm max-w-xs text-center md:text-left">
                Premium digital agency specialized in Shopify development and brand elevation.
              </p>

@@ -31,8 +31,12 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
-          <a className="flex items-center gap-2">
-            <img src={logo} alt="Darkbloom Digital" className="h-10 md:h-12 w-auto object-contain rounded-md" />
+          <a className="flex items-center gap-2 group">
+            <img 
+              src={logo} 
+              alt="Darkbloom Digital" 
+              className="h-10 md:h-12 w-auto object-contain mix-blend-screen invert hue-rotate-180 contrast-125 transition-transform group-hover:scale-105" 
+            />
           </a>
         </Link>
 
