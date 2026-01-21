@@ -4,7 +4,7 @@ import robImg from "@assets/Rob_1768961985749.png";
 
 const teamMembers = [
   {
-    name: "Rob Davis",
+    name: "Rob",
     role: "Founder & Lead Developer",
     bio: "Shopify expert and full-stack developer passionate about building high-converting ecommerce experiences.",
     image: robImg,
