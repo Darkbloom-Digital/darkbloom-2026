@@ -2,8 +2,44 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import type { InsertContactInquiry } from "@shared/schema";
 
 export default function Contact() {
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<InsertContactInquiry>();
+
+  const mutation = useMutation({
+    mutationFn: async (data: InsertContactInquiry) => {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit inquiry");
+      }
+
+      return response.json();
+    },
+    onSuccess: () => {
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      reset();
+    },
+    onError: (error) => {
+      toast.error("Failed to send message. Please try again.");
+      console.error("Submission error:", error);
+    },
+  });
+
+  const onSubmit = (data: InsertContactInquiry) => {
+    mutation.mutate(data);
+  };
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -13,35 +49,72 @@ export default function Contact() {
             <p className="text-white/60">Tell us about your project. We'll build the strategy to get you there.</p>
           </div>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Name</label>
-                <Input placeholder="John Doe" className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white h-12" />
+                <label className="text-sm font-medium text-white/80">Name *</label>
+                <Input 
+                  data-testid="input-name"
+                  placeholder="John Doe" 
+                  className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white h-12" 
+                  {...register("name", { required: "Name is required" })}
+                />
+                {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Email</label>
-                <Input placeholder="john@company.com" className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white h-12" />
+                <label className="text-sm font-medium text-white/80">Email *</label>
+                <Input 
+                  data-testid="input-email"
+                  type="email"
+                  placeholder="john@company.com" 
+                  className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white h-12" 
+                  {...register("email", { 
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email address"
+                    }
+                  })}
+                />
+                {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
               </div>
             </div>
             
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">Project Type</label>
-              <select className="flex h-12 w-full items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#e61e50] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-white">
-                <option className="bg-zinc-900">New Shopify Store</option>
-                <option className="bg-zinc-900">Store Migration</option>
-                <option className="bg-zinc-900">Custom Development</option>
-                <option className="bg-zinc-900">Ongoing Management</option>
+              <label className="text-sm font-medium text-white/80">Project Type *</label>
+              <select 
+                data-testid="select-project-type"
+                className="flex h-12 w-full items-center justify-between rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[#e61e50] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-white"
+                {...register("projectType", { required: "Project type is required" })}
+              >
+                <option value="" className="bg-zinc-900">Select a project type</option>
+                <option value="New Shopify Store" className="bg-zinc-900">New Shopify Store</option>
+                <option value="Store Migration" className="bg-zinc-900">Store Migration</option>
+                <option value="Custom Development" className="bg-zinc-900">Custom Development</option>
+                <option value="Ongoing Management" className="bg-zinc-900">Ongoing Management</option>
               </select>
+              {errors.projectType && <p className="text-red-400 text-xs">{errors.projectType.message}</p>}
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">Details</label>
-              <Textarea placeholder="Tell us about your goals..." className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white min-h-[150px]" />
+              <label className="text-sm font-medium text-white/80">Details *</label>
+              <Textarea 
+                data-testid="textarea-details"
+                placeholder="Tell us about your goals..." 
+                className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white min-h-[150px]" 
+                {...register("details", { required: "Please provide some details about your project" })}
+              />
+              {errors.details && <p className="text-red-400 text-xs">{errors.details.message}</p>}
             </div>
 
-            <Button size="lg" className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl mt-4">
-              Send Message
+            <Button 
+              data-testid="button-submit"
+              type="submit"
+              size="lg" 
+              className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl mt-4"
+              disabled={mutation.isPending}
+            >
+              {mutation.isPending ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </div>

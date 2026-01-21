@@ -30,14 +30,12 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-2 group">
-            <img 
-              src={logo} 
-              alt="Darkbloom Digital" 
-              className="h-10 md:h-12 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
-            />
-          </a>
+        <Link href="/" className="flex items-center gap-2 group cursor-pointer">
+          <img 
+            src={logo} 
+            alt="Darkbloom Digital" 
+            className="h-10 md:h-12 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
+          />
         </Link>
 
         {/* Desktop Nav */}
