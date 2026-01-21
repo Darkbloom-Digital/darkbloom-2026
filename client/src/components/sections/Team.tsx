@@ -6,6 +6,11 @@ const teamMembers = [
     role: "Founder & Lead Developer",
     bio: "Shopify expert and full-stack developer passionate about building high-converting ecommerce experiences.",
   },
+  {
+    name: "Poppy",
+    role: "Chief Vibes Officer",
+    bio: "Poppy joined the team in 2021 with no prior experience and a lot of enthusiasm. While her resume was mostly blank (and partially chewed), we took a chance on her — and we're glad we did. Now she oversees brand vibes, audience engagement, and sniffing out new opportunities.",
+  },
 ];
 
 export default function Team() {
@@ -31,7 +36,7 @@ export default function Team() {
           </p>
         </motion.div>
 
-        <div className="flex justify-center">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
