@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2">
-            <img src={logo} alt="Darkbloom Digital" className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
+            <img src={logo} alt="Darkbloom Digital" className="h-10 md:h-12 w-auto object-contain rounded-md" />
           </a>
         </Link>
 
