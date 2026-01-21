@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, MessageSquare, ChevronDown } from "lucide-react";
+import { Menu, X, Mail, MessageSquare, ChevronDown, Phone } from "lucide-react";
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaShopify } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -84,8 +85,38 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Top Banner */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-[#e61e50] text-white text-sm">
+        <div className="container mx-auto px-6 h-10 flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <a href="tel:+1234567890" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Phone size={14} />
+              <span className="hidden sm:inline">(123) 456-7890</span>
+            </a>
+            <a href="mailto:hello@darkbloom.digital" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Mail size={14} />
+              <span className="hidden sm:inline">hello@darkbloom.digital</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
+              <FaInstagram size={16} />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Facebook">
+              <FaFacebookF size={14} />
+            </a>
+            <a href="https://shopify.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Shopify">
+              <FaShopify size={16} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
+              <FaLinkedinIn size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
+
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
         }`}
       >
