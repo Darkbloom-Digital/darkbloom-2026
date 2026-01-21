@@ -89,13 +89,13 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#e61e50] text-white text-sm">
         <div className="container mx-auto px-6 h-10 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="tel:+1234567890" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="tel:+14239511970" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Phone size={14} />
-              <span className="hidden sm:inline">(123) 456-7890</span>
+              <span className="hidden sm:inline">423-951-1970</span>
             </a>
-            <a href="mailto:hello@darkbloom.digital" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:robdavis@darkbloomdigital.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail size={14} />
-              <span className="hidden sm:inline">hello@darkbloom.digital</span>
+              <span className="hidden sm:inline">robdavis@darkbloomdigital.com</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
