@@ -51,11 +51,11 @@ export default function Team() {
               className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all text-center"
             >
               {member.image ? (
-                <div className="w-full aspect-[4/3] rounded-xl mx-auto mb-6 overflow-hidden border-2 border-[#e61e50]/30">
+                <div className="w-full h-64 rounded-xl mx-auto mb-6 overflow-hidden border-2 border-[#e61e50]/30">
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className={`w-full h-full object-cover ${member.name === "Poppy" ? "object-top" : "object-center"}`}
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
               ) : (
