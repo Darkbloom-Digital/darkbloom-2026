@@ -1,4 +1,4 @@
-import logo from "@assets/DarkbloomLogoWordmarkFinal_1768953629437.png";
+import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768954239512.png";
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
              <img 
                src={logo} 
                alt="Darkbloom Digital" 
-               className="h-10 w-auto object-contain mix-blend-screen invert hue-rotate-180 contrast-125 opacity-90" 
+               className="h-10 w-auto object-contain mix-blend-screen opacity-90" 
              />
              <p className="text-white/40 text-sm max-w-xs text-center md:text-left">
                Premium digital agency specialized in Shopify development and brand elevation.

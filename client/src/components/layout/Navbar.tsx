@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/DarkbloomLogoWordmarkFinal_1768953629437.png";
+import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768954239512.png";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +35,7 @@ export default function Navbar() {
             <img 
               src={logo} 
               alt="Darkbloom Digital" 
-              className="h-10 md:h-12 w-auto object-contain mix-blend-screen invert hue-rotate-180 contrast-125 transition-transform group-hover:scale-105" 
+              className="h-10 md:h-12 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
             />
           </a>
         </Link>
