@@ -54,7 +54,8 @@ export default function Team() {
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30"
+                  className={`rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30 ${member.name === "Poppy" ? "clip-path-[inset(0_0_15%_0)]" : ""}`}
+                  style={member.name === "Poppy" ? { clipPath: "inset(0 0 15% 0)" } : {}}
                 />
               ) : (
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#e61e50] to-[#e61e50]/50 mx-auto mb-6 flex items-center justify-center text-3xl font-bold">
