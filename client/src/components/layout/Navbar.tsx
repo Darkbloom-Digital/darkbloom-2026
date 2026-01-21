@@ -108,7 +108,7 @@ export default function Navbar() {
             <a href="https://shopify.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Shopify">
               <FaShopify size={16} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
               <FaLinkedinIn size={16} />
             </a>
           </div>
