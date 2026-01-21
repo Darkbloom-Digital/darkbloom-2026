@@ -11,7 +11,7 @@ export default function Hero() {
         <img
           src={heroBg}
           alt="Background"
-          className="w-full h-full object-cover opacity-40 saturate-50"
+          className="w-full h-full object-cover opacity-40 saturate-75 hue-rotate-[-15deg]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
