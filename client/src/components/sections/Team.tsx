@@ -57,6 +57,7 @@ export default function Team() {
                       src={member.image} 
                       alt={member.name}
                       className="w-full"
+                      style={{ marginTop: '-20px' }}
                     />
                   </div>
                 ) : (
