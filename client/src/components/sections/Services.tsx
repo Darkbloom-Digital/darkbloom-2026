@@ -29,12 +29,12 @@ const additionalServices = [
   {
     icon: <Monitor className="w-10 h-10 text-[#e61e50]" />,
     title: "Custom Web Development",
-    description: "Beyond ecommerce, we build stunning websites, web applications, and digital platforms tailored to your business needs. From landing pages to complex portals.",
+    description: "Beyond ecommerce, we create stunning websites and web applications tailored to your business needs. Landing pages, portfolios, and interactive platforms.",
   },
   {
     icon: <AppWindow className="w-10 h-10 text-[#e61e50]" />,
     title: "App Development",
-    description: "Native and cross-platform mobile applications that extend your brand's reach. iOS, Android, and progressive web apps built with modern technologies.",
+    description: "Custom web applications and tools built to solve your unique business challenges. Streamlined solutions that help you work smarter and grow faster.",
   },
 ];
 
