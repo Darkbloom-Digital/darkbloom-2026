@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, MessageSquare } from "lucide-react";
+import { Menu, X, Mail, MessageSquare, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -59,11 +59,28 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Home", href: "#" },
     { name: "Services", href: "#services" },
-    { name: "Shopify Expertise", href: "#shopify" },
-    { name: "Work", href: "#work" },
+    { 
+      name: "Our Work", 
+      href: "#work",
+      dropdown: [
+        { name: "Featured Projects", href: "#work" },
+        { name: "Case Studies", href: "#case-studies" },
+      ]
+    },
+    { 
+      name: "Resources", 
+      href: "#resources",
+      dropdown: [
+        { name: "Shopify Performance Audit", href: "#performance-audit" },
+        { name: "CRO Blueprint", href: "#cro-blueprint" },
+      ]
+    },
     { name: "Contact", href: "#contact" },
   ];
+
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
     <>
@@ -87,13 +104,35 @@ export default function Navbar() {
           {/* Nav Links - Center */}
           <div className="hidden md:flex items-center justify-center gap-8 flex-1">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider"
+              <div 
+                key={link.name} 
+                className="relative"
+                onMouseEnter={() => link.dropdown && setOpenDropdown(link.name)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.name}
-              </a>
+                <a
+                  href={link.href}
+                  className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider flex items-center gap-1"
+                >
+                  {link.name}
+                  {link.dropdown && <ChevronDown size={14} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />}
+                </a>
+                {link.dropdown && openDropdown === link.name && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
+                    <div className="bg-zinc-900/95 backdrop-blur-md border border-white/10 rounded-lg py-2 min-w-[200px] shadow-xl">
+                      {link.dropdown.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="block px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -128,18 +167,45 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-zinc-950 border-b border-white/10 p-6 flex flex-col gap-4 shadow-xl">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-zinc-950 border-b border-white/10 p-6 flex flex-col gap-2 shadow-xl max-h-[80vh] overflow-y-auto">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-lg font-medium text-white hover:text-[#e61e50]"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
+              <div key={link.name}>
+                {link.dropdown ? (
+                  <div>
+                    <button
+                      onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
+                      className="w-full flex items-center justify-between text-lg font-medium text-white hover:text-[#e61e50] py-2"
+                    >
+                      {link.name}
+                      <ChevronDown size={18} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                    </button>
+                    {openDropdown === link.name && (
+                      <div className="pl-4 flex flex-col gap-2 mt-1 mb-2">
+                        {link.dropdown.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="text-base text-white/70 hover:text-[#e61e50] py-1"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="block text-lg font-medium text-white hover:text-[#e61e50] py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                )}
+              </div>
             ))}
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-4 mt-4 pt-4 border-t border-white/10">
               <Button 
                 variant="outline" 
                 className="flex-1 border-white/20"
