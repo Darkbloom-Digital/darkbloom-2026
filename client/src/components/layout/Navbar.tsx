@@ -34,7 +34,7 @@ export default function Navbar() {
           <img 
             src={logo} 
             alt="Darkbloom Digital" 
-            className="h-10 md:h-12 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
+            className="h-24 md:h-32 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
           />
         </Link>
 
