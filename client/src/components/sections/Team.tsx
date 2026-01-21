@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
+import poppyImg from "@assets/Remove_background_project-2_1768960690269.png";
 
 const teamMembers = [
   {
     name: "Rob Davis",
     role: "Founder & Lead Developer",
     bio: "Shopify expert and full-stack developer passionate about building high-converting ecommerce experiences.",
+    image: null,
   },
   {
     name: "Poppy",
     role: "Director of Barketing",
     bio: "Poppy joined the team in 2021 with no prior experience and a lot of enthusiasm. While her resume was mostly blank (and partially chewed), we took a chance on her — and we're glad we did. Now she oversees brand vibes, audience engagement, and sniffing out new opportunities.",
+    image: poppyImg,
   },
 ];
 
@@ -46,9 +49,17 @@ export default function Team() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all max-w-md text-center"
             >
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#e61e50] to-[#e61e50]/50 mx-auto mb-6 flex items-center justify-center text-3xl font-bold">
-                {member.name.split(' ').map(n => n[0]).join('')}
-              </div>
+              {member.image ? (
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover object-top border-2 border-[#e61e50]/30"
+                />
+              ) : (
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#e61e50] to-[#e61e50]/50 mx-auto mb-6 flex items-center justify-center text-3xl font-bold">
+                  {member.name.split(' ').map(n => n[0]).join('')}
+                </div>
+              )}
               <h3 className="text-2xl font-semibold mb-2">{member.name}</h3>
               <p className="text-[#e61e50] font-medium mb-4">{member.role}</p>
               <p className="text-white/50 leading-relaxed">{member.bio}</p>
