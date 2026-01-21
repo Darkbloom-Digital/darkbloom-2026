@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShoppingBag, Code, BarChart3, Layers, Globe, Smartphone, Monitor, AppWindow } from "lucide-react";
+import { ShoppingBag, Code, BarChart3, Layers, Globe, Smartphone, Monitor } from "lucide-react";
 import shopifyImg from "@assets/generated_images/modern_3d_ecommerce_dashboard_visualization.png";
 
 const shopifyServices = [
@@ -30,11 +30,6 @@ const additionalServices = [
     icon: <Monitor className="w-10 h-10 text-[#e61e50]" />,
     title: "Custom Web Development",
     description: "Beyond ecommerce, we create stunning websites and web applications tailored to your business needs. Landing pages, portfolios, and interactive platforms.",
-  },
-  {
-    icon: <AppWindow className="w-10 h-10 text-[#e61e50]" />,
-    title: "App Development",
-    description: "Custom web applications and tools built to solve your unique business challenges. Streamlined solutions that help you work smarter and grow faster.",
   },
 ];
 
@@ -130,7 +125,7 @@ export default function Services() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="flex justify-center max-w-2xl mx-auto">
             {additionalServices.map((service, index) => (
               <div key={index} className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all group hover:scale-[1.02]">
                 <div className="mb-5 bg-white/5 w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-[#e61e50]/10 transition-colors">
