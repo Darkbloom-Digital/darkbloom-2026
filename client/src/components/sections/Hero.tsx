@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroBg from "@assets/generated_images/dark_abstract_geometric_background_with_neon_pink_accents.png";
+import heroBg from "@assets/generated_images/dark_abstract_red_geometric_background.png";
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
         <img
           src={heroBg}
           alt="Background"
-          className="w-full h-full object-cover opacity-40 saturate-75 hue-rotate-[-15deg]"
+          className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
