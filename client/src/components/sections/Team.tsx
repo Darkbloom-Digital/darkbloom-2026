@@ -54,7 +54,7 @@ export default function Team() {
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-56 rounded-xl mx-auto mb-6 object-cover object-top border-2 border-[#e61e50]/30"
+                  className="w-full h-56 rounded-xl mx-auto mb-6 object-cover object-center border-2 border-[#e61e50]/30"
                 />
               ) : (
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#e61e50] to-[#e61e50]/50 mx-auto mb-6 flex items-center justify-center text-3xl font-bold">
