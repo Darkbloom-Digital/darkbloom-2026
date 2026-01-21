@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import poppyImg from "@assets/Remove_background_project-2_1768960690269.png";
+import robImg from "@assets/Rob_1768961985749.png";
 
 const teamMembers = [
   {
     name: "Rob Davis",
     role: "Founder & Lead Developer",
     bio: "Shopify expert and full-stack developer passionate about building high-converting ecommerce experiences.",
-    image: null,
+    image: robImg,
   },
   {
     name: "Poppy",
