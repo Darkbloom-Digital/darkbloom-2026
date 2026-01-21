@@ -52,7 +52,7 @@ export default function Team() {
             >
               {member.image ? (
                 member.name === "Poppy" ? (
-                  <div className="overflow-hidden rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30" style={{ maxHeight: '250px' }}>
+                  <div className="overflow-hidden rounded-xl mx-auto mb-6 border-2 border-[#e61e50]/30" style={{ maxHeight: '220px' }}>
                     <img 
                       src={member.image} 
                       alt={member.name}
