@@ -112,10 +112,10 @@ export default function Navbar() {
               >
                 <a
                   href={link.href}
-                  className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider flex items-center gap-1"
+                  className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap"
                 >
                   {link.name}
-                  {link.dropdown && <ChevronDown size={14} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />}
+                  {link.dropdown && <ChevronDown size={18} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />}
                 </a>
                 {link.dropdown && openDropdown === link.name && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
