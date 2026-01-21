@@ -72,9 +72,9 @@ export default function Navbar() {
           isScrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
-          <div className="flex-1">
+          <div className="flex-1 flex items-center">
             <Link href="/" className="inline-flex items-center group cursor-pointer">
               <img 
                 src={logo} 
