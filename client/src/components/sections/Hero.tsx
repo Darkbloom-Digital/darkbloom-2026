@@ -43,16 +43,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-current rounded-full" />
-        </div>
-      </motion.div>
-    </section>
+          </section>
   );
 }
