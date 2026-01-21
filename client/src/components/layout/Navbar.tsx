@@ -79,7 +79,7 @@ export default function Navbar() {
               <img 
                 src={logo} 
                 alt="Darkbloom Digital" 
-                className="h-[60px] md:h-20 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
+                className="h-12 md:h-16 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105" 
               />
             </Link>
           </div>
