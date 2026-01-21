@@ -40,7 +40,7 @@ export default function Team() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -48,7 +48,7 @@ export default function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all max-w-md text-center"
+              className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all text-center h-full"
             >
               {member.image ? (
                 <img 
