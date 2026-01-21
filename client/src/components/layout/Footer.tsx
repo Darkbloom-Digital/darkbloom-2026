@@ -9,7 +9,7 @@ export default function Footer() {
              <img 
                src={logo} 
                alt="Darkbloom Digital" 
-               className="h-16 w-auto object-contain mix-blend-screen opacity-90" 
+               className="h-[120px] w-auto object-contain mix-blend-screen opacity-90" 
              />
              <p className="text-white/40 text-sm max-w-xs text-center md:text-left">
                Premium digital agency specialized in Shopify development and brand elevation.
