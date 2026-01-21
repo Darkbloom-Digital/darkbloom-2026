@@ -11,9 +11,10 @@ export default function Hero() {
         <img
           src={heroBg}
           alt="Background"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-50 saturate-150 hue-rotate-[-10deg]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
+        <div className="absolute inset-0 bg-[#e61e50]/5 mix-blend-overlay" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
