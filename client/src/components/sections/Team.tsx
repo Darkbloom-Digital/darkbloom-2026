@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: "Rob",
     role: "Founder & Lead Developer",
-    bio: "Shopify expert and full-stack developer passionate about building high-converting ecommerce experiences.",
+    bio: "Shopify expert and full-stack developer designing platforms built to convert and scale.",
     image: robImg,
   },
   {
