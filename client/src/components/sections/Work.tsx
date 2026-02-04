@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import austinImg from "@assets/AustinPortfolio_1770171737656.png";
 
 const projects = [
   {
@@ -12,7 +13,7 @@ const projects = [
     title: "Austin Calfee",
     category: "Custom Website",
     url: "https://austincalfee.com",
-    gradient: "linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%)"
+    image: austinImg
   },
   {
     title: "DocPeeler",
@@ -56,12 +57,14 @@ export default function Work() {
               className="group cursor-pointer block"
             >
               <div 
-                className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6"
-                style={{ background: project.gradient }}
+                className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6 bg-cover bg-center"
+                style={{ background: project.image ? `url(${project.image})` : project.gradient, backgroundSize: 'cover', backgroundPosition: 'center' }}
               >
-                <div className="absolute inset-0 flex items-center justify-center opacity-20 text-5xl font-bold text-white uppercase tracking-tighter">
-                  {project.title.split(' ')[0]}
-                </div>
+                {!project.image && (
+                  <div className="absolute inset-0 flex items-center justify-center opacity-20 text-5xl font-bold text-white uppercase tracking-tighter">
+                    {project.title.split(' ')[0]}
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <div className="w-16 h-16 rounded-full bg-[#e61e50] flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-300">
                     <ArrowUpRight className="text-white w-8 h-8" />
