@@ -98,6 +98,17 @@ export default function Contact() {
             </div>
 
             <div className="space-y-2">
+              <label className="text-sm font-medium text-white/80">Current Website URL (if you have one)</label>
+              <Input 
+                data-testid="input-website-url"
+                type="url"
+                placeholder="https://yourwebsite.com" 
+                className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white" 
+                {...register("websiteUrl")}
+              />
+            </div>
+
+            <div className="space-y-2">
               <label className="text-sm font-medium text-white/80">Details *</label>
               <Textarea 
                 data-testid="textarea-details"
