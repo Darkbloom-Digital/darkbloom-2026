@@ -11,7 +11,7 @@ import FloatingParticles from "@/components/FloatingParticles";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#e61e50] selection:text-white relative">
-      <FloatingParticles className="fixed inset-0 w-full h-full z-0 pointer-events-none" />
+      <FloatingParticles className="absolute top-0 left-0 w-full h-[500vh] z-0 pointer-events-none" />
       <Navbar />
       <main className="relative z-10">
         <Hero />
