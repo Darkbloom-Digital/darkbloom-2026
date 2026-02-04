@@ -25,7 +25,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-            Real Websites <span className="text-gradient-fade">for</span> <br /><span className="text-gradient">Real Brands</span>
+            Real Websites <span className="text-gradient-fade">for</span> <br /><span className="text-[#e61e50]">Real Brands</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Custom websites and Shopify stores built for brands that demand perfection. High-performance, aesthetic, and conversion-focused.
