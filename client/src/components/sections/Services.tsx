@@ -51,7 +51,7 @@ export default function Services() {
             What We Build
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-            Clear layouts and user flows designed to guide visitors, reduce friction, and support conversion.
+            From custom websites to Shopify stores, we create digital experiences that set your brand apart.
           </p>
         </motion.div>
 
