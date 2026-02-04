@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(to right, hsl(var(--primary)), #ff4d7d);
+  background-image: linear-gradient(to right, #ff4d7d, hsl(var(--primary)));
 }
 
 .text-gradient-fade {
