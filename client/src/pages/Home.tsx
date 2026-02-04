@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Team from "@/components/sections/Team";
 import Work from "@/components/sections/Work";
+import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Services />
         <Team />
         <Work />
+        <Reviews />
         <Contact />
       </main>
       <Footer />
