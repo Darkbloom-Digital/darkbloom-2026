@@ -48,7 +48,7 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What We Build
+            What We <span className="text-[#e61e50]">Build</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
             From websites to Shopify stores, we create digital experiences that set your brand apart.
