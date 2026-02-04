@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import logoSrc from "@assets/SiteLogo_1770164848722.png";
 
 interface Particle {
   x: number;
@@ -7,7 +8,8 @@ interface Particle {
   speedX: number;
   speedY: number;
   opacity: number;
-  color: string;
+  rotation: number;
+  rotationSpeed: number;
 }
 
 interface FloatingParticlesProps {
@@ -24,6 +26,9 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const logo = new Image();
+    logo.src = logoSrc;
+
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
@@ -31,28 +36,24 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    const colors = [
-      "#e61e50",
-      "#e61e50",
-      "#e61e50",
-      "rgba(255, 255, 255, 0.6)",
-      "rgba(255, 255, 255, 0.4)",
-    ];
-
     const particles: Particle[] = [];
-    const particleCount = 60;
+    const particleCount = 25;
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.3,
-        opacity: Math.random() * 0.4 + 0.1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      });
-    }
+    const initParticles = () => {
+      particles.length = 0;
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 20 + 15,
+          speedX: (Math.random() - 0.5) * 0.4,
+          speedY: (Math.random() - 0.5) * 0.4,
+          opacity: Math.random() * 0.15 + 0.05,
+          rotation: Math.random() * Math.PI * 2,
+          rotationSpeed: (Math.random() - 0.5) * 0.005,
+        });
+      }
+    };
 
     let animationId: number;
 
@@ -62,24 +63,28 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
       particles.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
+        p.rotation += p.rotationSpeed;
 
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        if (p.x < -p.size) p.x = canvas.width + p.size;
+        if (p.x > canvas.width + p.size) p.x = -p.size;
+        if (p.y < -p.size) p.y = canvas.height + p.size;
+        if (p.y > canvas.height + p.size) p.y = -p.size;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color.startsWith("rgba") 
-          ? p.color.replace(/[\d.]+\)$/, `${p.opacity})`)
-          : `${p.color}${Math.round(p.opacity * 255).toString(16).padStart(2, '0')}`;
-        ctx.fill();
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.globalAlpha = p.opacity;
+        ctx.drawImage(logo, -p.size / 2, -p.size / 2, p.size, p.size);
+        ctx.restore();
       });
 
       animationId = requestAnimationFrame(animate);
     };
 
-    animate();
+    logo.onload = () => {
+      initParticles();
+      animate();
+    };
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
