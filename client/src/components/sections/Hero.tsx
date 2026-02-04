@@ -1,23 +1,21 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768955288967.png";
+import logoIcon from "@assets/SiteLogo_1770164848722.png";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-zinc-950">
-        <div 
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url(${logo})`,
-            backgroundSize: '300px',
-            backgroundRepeat: 'repeat',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#e61e50]/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src={logoIcon} 
+            alt="" 
+            className="w-[80vw] max-w-[800px] h-auto opacity-[0.06]"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
