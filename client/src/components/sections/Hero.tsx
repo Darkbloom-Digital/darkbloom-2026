@@ -24,9 +24,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#e61e50]/10 border border-[#e61e50]/30 text-[#e61e50] text-sm font-medium tracking-wider uppercase mb-6">
-            Real Websites for Real Brands
-          </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
             We Build <span className="text-gradient">Digital Empires</span>
           </h1>
