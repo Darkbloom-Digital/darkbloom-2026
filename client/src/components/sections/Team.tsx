@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: "Poppy",
     role: "Director of Barketing",
-    bio: "Poppy joined the team in 2021 with no prior experience and a lot of enthusiasm. While her resume was mostly blank (and partially chewed), we took a chance on her — and we're glad we did. Now she oversees brand vibes, audience engagement, and sniffing out new opportunities.",
+    bio: "Poppy joined the team in 2021 with no prior experience and a lot of enthusiasm. While her resume was mostly blank (and partially chewed), we took a chance on her and we're glad we did. Now she oversees brand vibes, audience engagement, and sniffing out new opportunities.",
     image: poppyImg,
   },
 ];
