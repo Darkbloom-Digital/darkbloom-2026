@@ -60,7 +60,7 @@ export default function Work() {
                 className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6"
               >
                 <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 scale-125 group-hover:scale-100"
                   style={{ background: project.image ? `url(${project.image})` : project.gradient, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 />
                 {!project.image && (
