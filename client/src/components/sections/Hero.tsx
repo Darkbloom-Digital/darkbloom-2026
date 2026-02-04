@@ -28,7 +28,7 @@ export default function Hero() {
             Real Websites <span className="text-gradient-fade">for</span> <br /><span className="text-[#e61e50]">Real Brands</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Custom websites and Shopify stores built for brands that demand perfection. High-performance, aesthetic, and conversion-focused.
+            Custom websites and Shopify stores, done the right way.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-full px-8 h-14 text-lg border-0">
