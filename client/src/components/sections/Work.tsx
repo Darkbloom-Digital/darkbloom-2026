@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "DocPeeler",
-    category: "Custom Website",
+    category: "SaaS Platform",
     url: "https://docpeeler.com",
     image: docpeelerImg
   },
