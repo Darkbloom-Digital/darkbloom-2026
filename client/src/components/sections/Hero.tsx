@@ -9,7 +9,6 @@ export default function Hero() {
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-zinc-950">
         <FloatingParticles className="absolute inset-0 w-full h-full" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
