@@ -46,7 +46,7 @@ export default function Work() {
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <motion.a
               key={index}
@@ -60,7 +60,7 @@ export default function Work() {
               className="group cursor-pointer block"
             >
               <div 
-                className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6"
+                className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-4"
               >
                 <div 
                   className="absolute inset-0 transition-all duration-500 group-hover:opacity-0"
@@ -92,7 +92,7 @@ export default function Work() {
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-1 group-hover:text-[#e61e50] transition-colors">{project.title}</h3>
+              <h3 className="text-xl font-bold mb-1 group-hover:text-[#e61e50] transition-colors">{project.title}</h3>
               <p className="text-white/40 font-mono text-sm uppercase tracking-wider">{project.category}</p>
             </motion.a>
           ))}
