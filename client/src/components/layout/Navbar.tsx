@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { Menu, X, Mail, MessageSquare, ChevronDown, Phone } from "lucide-react";
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaShopify } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -104,9 +104,6 @@ export default function Navbar() {
             </a>
             <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Facebook">
               <FaFacebookF size={14} />
-            </a>
-            <a href="https://shopify.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Shopify">
-              <FaShopify size={16} />
             </a>
             <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
               <FaLinkedinIn size={16} />
