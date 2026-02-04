@@ -123,7 +123,7 @@ export default function Contact() {
               data-testid="button-submit"
               type="submit"
               size="lg" 
-              className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl mt-4"
+              className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl mt-4 border-0"
               disabled={mutation.isPending}
             >
               {mutation.isPending ? "Sending..." : "Send Message"}
