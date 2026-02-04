@@ -3,9 +3,9 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sarah Mitchell",
-    company: "Bloom Beauty Co.",
-    review: "Working with Darkbloom was a game-changer for our brand. They took our vision and turned it into a stunning Shopify store that our customers love.",
+    name: "Austin Calfee",
+    company: "Toyota of Cleveland",
+    review: "I reached out to Robbie about building a website to help grow my business and had a meeting scheduled in no time to discuss exactly what I was wanting. He helped me fine tune what was necessary and what wasn't needed, was patient with me while I got all the information he needed to him, and delivered an excellent product that exceeded expectations. I will definitely use him again in the future.",
     rating: 5,
   },
   {
