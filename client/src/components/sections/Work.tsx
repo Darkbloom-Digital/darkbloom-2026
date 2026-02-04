@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import austinImg from "@assets/AustinPortfolio_1770171737656.png";
 import ntegImg from "@assets/NtegPortfolio_1770172150088.png";
+import docpeelerImg from "@assets/DPPortfolio_1770172353378.png";
 
 const projects = [
   {
@@ -20,7 +21,7 @@ const projects = [
     title: "DocPeeler",
     category: "Custom Website",
     url: "https://docpeeler.com",
-    gradient: "linear-gradient(135deg, #065f46 0%, #1f2937 100%)"
+    image: docpeelerImg
   },
   {
     title: "Hatta Boy Hat Co",
