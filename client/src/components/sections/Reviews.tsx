@@ -24,7 +24,7 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-24 bg-background relative overflow-hidden section-divider">
+    <section id="reviews" className="py-24 relative overflow-hidden section-divider">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -37,7 +37,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-background relative overflow-hidden section-divider">
+    <section id="services" className="py-24 relative overflow-hidden section-divider">
       <div className="container mx-auto px-6">
         
         <motion.div
