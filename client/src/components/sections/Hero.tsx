@@ -1,21 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logoIcon from "@assets/SiteLogo_1770164848722.png";
+import FloatingParticles from "@/components/FloatingParticles";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-zinc-950">
-        <div className="absolute inset-0 flex items-center justify-center pt-24">
-          <img 
-            src={logoIcon} 
-            alt="" 
-            className="w-[80vw] max-w-[800px] h-auto opacity-[0.08]"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <FloatingParticles className="absolute inset-0 w-full h-full" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
