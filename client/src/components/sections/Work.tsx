@@ -36,14 +36,9 @@ export default function Work() {
   return (
     <section id="work" className="py-24 section-divider">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Work</h2>
-            <p className="text-white/50 max-w-md">We partner with ambitious brands to create digital experiences that sell.</p>
-          </div>
-          <button className="hidden md:flex items-center gap-2 text-[#e61e50] font-medium hover:text-white transition-colors">
-            View All Projects <ArrowUpRight size={18} />
-          </button>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Work</h2>
+          <p className="text-white/50 max-w-md mx-auto">We partner with ambitious brands to create digital experiences that sell.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
