@@ -12,7 +12,7 @@ export default function Footer() {
                className="h-[60px] w-auto object-contain mix-blend-screen opacity-90" 
              />
              <p className="text-white/40 text-sm max-w-xs text-center md:text-left">
-               Premium digital agency specialized in Shopify development and brand elevation.
+               Real websites for real brands.
              </p>
           </div>
           
