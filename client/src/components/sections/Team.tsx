@@ -28,13 +28,10 @@ export default function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold">
             Meet the People <br />
             <span className="text-[#e61e50]">Behind the Work</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Dedicated professionals committed to bringing your digital vision to life.
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
