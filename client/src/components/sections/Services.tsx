@@ -15,8 +15,8 @@ const services = [
   },
   {
     icon: <Palette className="w-8 h-8 text-[#e61e50]" />,
-    title: "Brand-First Design",
-    description: "Every project starts with your brand. We create cohesive digital experiences that feel unmistakably you.",
+    title: "UX-Driven Layouts",
+    description: "Clear layouts and user flows designed to guide visitors, reduce friction, and support conversion.",
   },
   {
     icon: <Code className="w-8 h-8 text-[#e61e50]" />,
