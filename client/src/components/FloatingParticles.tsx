@@ -37,11 +37,11 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
     window.addEventListener("resize", resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 12;
+    const particleCount = 40;
 
     const initParticles = () => {
       particles.length = 0;
-      const cols = 4;
+      const cols = 5;
       const rows = Math.ceil(particleCount / cols);
       const cellWidth = canvas.width / cols;
       const cellHeight = canvas.height / rows;
