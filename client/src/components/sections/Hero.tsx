@@ -8,9 +8,6 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-zinc-950">
-        <div className="absolute inset-0 flex items-center justify-center pt-24 opacity-40">
-          <ParticleLogo className="w-[80vw] max-w-[800px] h-[600px]" />
-        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
@@ -23,9 +20,12 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
             Real Websites <span className="text-gradient-fade">for</span> <br /><span className="text-[#e61e50]">Real Brands</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-8 font-light leading-relaxed">
             Custom websites and Shopify stores, done the right way.
           </p>
+          <div className="w-64 h-48 mx-auto mb-8">
+            <ParticleLogo className="w-full h-full" />
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-xl px-8 h-14 text-lg border-0">
               Start Your Project
