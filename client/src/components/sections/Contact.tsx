@@ -112,7 +112,7 @@ export default function Contact() {
               <label className="text-sm font-medium text-white/80">Details *</label>
               <Textarea 
                 data-testid="textarea-details"
-                placeholder="Tell us about your goals..." 
+                placeholder="Tell us about your project..." 
                 className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white min-h-[150px]" 
                 {...register("details", { required: "Please provide some details about your project" })}
               />
