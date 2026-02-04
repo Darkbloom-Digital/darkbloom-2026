@@ -93,6 +93,13 @@ h1, h2, h3, h4, h5, h6 {
   background-image: linear-gradient(to right, hsl(var(--primary)), #ff4d7d);
 }
 
+.text-gradient-fade {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, white, hsl(var(--primary)));
+}
+
 .glass-card {
   background: rgba(20, 20, 25, 0.7);
   backdrop-filter: blur(12px);
