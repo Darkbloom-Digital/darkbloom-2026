@@ -43,12 +43,8 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-white/30">
-          <p>&copy; {new Date().getFullYear()} Darkbloom Digital. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Privacy Policy</a>
-            <a href="#" className="hover:text-white">Terms of Service</a>
-          </div>
+        <div className="pt-8 border-t border-white/10 text-xs text-white/30 text-center">
+          <p>&copy; 2024 Darkbloom Digital. All rights reserved.</p>
         </div>
       </div>
     </footer>
