@@ -28,9 +28,6 @@ export default function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#e61e50]/10 border border-[#e61e50]/30 text-[#e61e50] text-sm font-medium tracking-wider uppercase mb-6">
-            The Team
-          </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Meet the People <br />
             <span className="text-white/40">Behind the Work</span>
