@@ -6,7 +6,7 @@ const services = [
   {
     icon: <Monitor className="w-8 h-8 text-[#e61e50]" />,
     title: "Custom Websites",
-    description: "Stunning, hand-crafted websites built from scratch. No templates, no shortcuts—just pixel-perfect design.",
+    description: "Thoughtfully designed websites tailored to your brand, built to engage visitors and drive results.",
   },
   {
     icon: <ShoppingBag className="w-8 h-8 text-[#e61e50]" />,
