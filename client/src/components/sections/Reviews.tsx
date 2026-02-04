@@ -47,15 +47,15 @@ export default function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all"
+              className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all flex flex-col"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-[#e61e50] text-[#e61e50]" />
                 ))}
               </div>
-              <p className="text-white/70 leading-relaxed mb-6">"{review.review}"</p>
-              <div>
+              <p className="text-white/70 leading-relaxed flex-1">"{review.review}"</p>
+              <div className="mt-6 pt-4 border-t border-white/10">
                 <p className="font-semibold">{review.name}</p>
                 <p className="text-white/50 text-sm">{review.company}</p>
               </div>
