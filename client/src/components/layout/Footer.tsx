@@ -5,13 +5,13 @@ export default function Footer() {
     <footer className="bg-black py-16 border-t border-white/10 relative z-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-          <div className="flex flex-col items-center md:items-start gap-4">
+          <div className="flex flex-col items-start gap-4">
              <img 
                src={logo} 
                alt="Darkbloom Digital" 
                className="h-[60px] w-auto object-contain mix-blend-screen opacity-90" 
              />
-             <p className="text-white/40 text-sm max-w-xs text-center md:text-left">
+             <p className="text-white/40 text-sm text-left">
                Real websites for real brands.
              </p>
           </div>
