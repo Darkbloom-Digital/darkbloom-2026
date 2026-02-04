@@ -6,7 +6,7 @@ const services = [
   {
     icon: <Monitor className="w-8 h-8 text-[#e61e50]" />,
     title: "Custom Websites",
-    description: "Websites built from the ground up with long-term performance and reliability in mind.",
+    description: "Websites built from the ground up with performance, reliability, and maintainability in mind.",
   },
   {
     icon: <ShoppingBag className="w-8 h-8 text-[#e61e50]" />,
