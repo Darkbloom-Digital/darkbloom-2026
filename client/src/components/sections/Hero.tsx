@@ -12,7 +12,7 @@ export default function Hero() {
           <img 
             src={logoIcon} 
             alt="" 
-            className="w-[80vw] max-w-[800px] h-auto opacity-[0.06]"
+            className="w-[80vw] max-w-[800px] h-auto opacity-[0.12]"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
