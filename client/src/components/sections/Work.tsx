@@ -25,7 +25,7 @@ const projects = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 bg-background border-t border-white/5">
+    <section id="work" className="py-24 bg-background section-divider">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
           <div>

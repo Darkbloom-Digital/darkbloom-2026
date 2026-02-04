@@ -19,7 +19,7 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-background relative overflow-hidden">
+    <section id="team" className="py-24 bg-background relative overflow-hidden section-divider">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
