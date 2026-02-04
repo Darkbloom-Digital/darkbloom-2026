@@ -60,19 +60,18 @@ export default function Work() {
                 className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6"
               >
                 <div 
-                  className="absolute inset-0 bg-center transition-all duration-500"
+                  className="absolute inset-0 transition-all duration-500 group-hover:opacity-0"
                   style={{ 
-                    backgroundImage: project.image ? `url(${project.image})` : 'none',
-                    background: !project.image ? project.gradient : undefined,
-                    backgroundSize: project.image ? '150%' : 'cover',
-                    backgroundPosition: 'center'
+                    backgroundImage: project.image ? `url(${project.image})` : project.gradient,
+                    backgroundSize: '150%',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
                   }}
                 />
                 <div 
-                  className="absolute inset-0 bg-center transition-all duration-500 opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 transition-all duration-500 opacity-0 group-hover:opacity-100 bg-zinc-900"
                   style={{ 
-                    backgroundImage: project.image ? `url(${project.image})` : 'none',
-                    background: !project.image ? project.gradient : undefined,
+                    backgroundImage: project.image ? `url(${project.image})` : project.gradient,
                     backgroundSize: 'contain',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center'
