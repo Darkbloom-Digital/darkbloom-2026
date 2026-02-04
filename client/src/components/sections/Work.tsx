@@ -57,16 +57,19 @@ export default function Work() {
               className="group cursor-pointer block"
             >
               <div 
-                className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6 bg-cover bg-center"
-                style={{ background: project.image ? `url(${project.image})` : project.gradient, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                className="aspect-[16/10] rounded-2xl overflow-hidden relative mb-6"
               >
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ background: project.image ? `url(${project.image})` : project.gradient, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                />
                 {!project.image && (
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20 text-5xl font-bold text-white uppercase tracking-tighter">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-20 text-5xl font-bold text-white uppercase tracking-tighter z-10">
                     {project.title.split(' ')[0]}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-[#e61e50] flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                <div className="absolute inset-0 bg-black/60 opacity-100 group-hover:opacity-0 transition-opacity duration-300 flex items-center justify-center z-20">
+                  <div className="w-16 h-16 rounded-full bg-[#e61e50] flex items-center justify-center">
                     <ArrowUpRight className="text-white w-8 h-8" />
                   </div>
                 </div>
