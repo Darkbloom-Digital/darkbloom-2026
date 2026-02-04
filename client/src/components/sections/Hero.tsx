@@ -34,7 +34,7 @@ export default function Hero() {
             Specialized Shopify development and management for brands that demand perfection. High-performance, aesthetic, and conversion-focused.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-full px-8 h-14 text-lg">
+            <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-full px-8 h-14 text-lg border-0">
               Start Your Project
             </Button>
             <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/5 rounded-full px-8 h-14 text-lg group">
