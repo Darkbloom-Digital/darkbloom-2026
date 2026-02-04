@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ShoppingBag, Code, Palette, Rocket, Globe, Smartphone, Monitor, Layers } from "lucide-react";
-import shopifyImg from "@assets/generated_images/modern_3d_ecommerce_dashboard_visualization.png";
+import shopifyImg from "@assets/optimized/shopify-dashboard.webp";
 
 const services = [
   {

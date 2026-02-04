@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import logoSrc from "@assets/SiteLogo_1770164848722.png";
+import logoSrc from "@assets/optimized/site-logo.webp";
 
 interface Particle {
   x: number;

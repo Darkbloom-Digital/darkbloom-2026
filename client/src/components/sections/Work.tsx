@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import austinImg from "@assets/AustinPortfolio_1770171737656.png";
-import ntegImg from "@assets/NtegPortfolio_1770172150088.png";
-import docpeelerImg from "@assets/DPPortfolio_1770172353378.png";
-import hattaboyImg from "@assets/HattaBoyPortfolio_1770172590495.png";
+import austinImg from "@assets/optimized/austin-portfolio.webp";
+import ntegImg from "@assets/optimized/nteg-portfolio.webp";
+import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
+import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 
 const projects = [
   {

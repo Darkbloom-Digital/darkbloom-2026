@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import type { InsertContactInquiry } from "@shared/schema";
-import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768955288967.png";
+import logo from "@assets/optimized/logo-wordmark.webp";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import poppyImg from "@assets/Remove_background_project-2_1768960690269.png";
-import robImg from "@assets/Rob_1768961985749.png";
+import poppyImg from "@assets/optimized/poppy.webp";
+import robImg from "@assets/optimized/rob.webp";
 
 const teamMembers = [
   {

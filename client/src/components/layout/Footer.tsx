@@ -1,4 +1,4 @@
-import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768955288967.png";
+import logo from "@assets/optimized/logo-wordmark.webp";
 
 export default function Footer() {
   return (
