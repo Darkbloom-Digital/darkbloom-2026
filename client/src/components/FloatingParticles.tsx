@@ -41,10 +41,17 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
 
     const initParticles = () => {
       particles.length = 0;
+      const cols = 4;
+      const rows = Math.ceil(particleCount / cols);
+      const cellWidth = canvas.width / cols;
+      const cellHeight = canvas.height / rows;
+      
       for (let i = 0; i < particleCount; i++) {
+        const col = i % cols;
+        const row = Math.floor(i / cols);
         particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          x: col * cellWidth + Math.random() * cellWidth,
+          y: row * cellHeight + Math.random() * cellHeight,
           size: Math.random() * 20 + 15,
           speedX: (Math.random() - 0.5) * 0.4,
           speedY: (Math.random() - 0.5) * 0.4,
