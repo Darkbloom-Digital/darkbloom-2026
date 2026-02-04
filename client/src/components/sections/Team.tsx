@@ -30,7 +30,7 @@ export default function Team() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Meet the People <br />
-            <span className="text-white/40">Behind the Work</span>
+            <span className="text-[#e61e50]">Behind the Work</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Dedicated professionals committed to bringing your digital vision to life.
