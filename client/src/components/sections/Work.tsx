@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import austinImg from "@assets/AustinPortfolio_1770171737656.png";
+import ntegImg from "@assets/NtegPortfolio_1770172150088.png";
 
 const projects = [
   {
     title: "Integrity Network Solutions",
     category: "Custom Website",
     url: "https://nteg.net",
-    gradient: "linear-gradient(135deg, #1a365d 0%, #2d3748 100%)"
+    image: ntegImg
   },
   {
     title: "Austin Calfee",
