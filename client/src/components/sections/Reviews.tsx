@@ -9,9 +9,9 @@ const reviews = [
     rating: 5,
   },
   {
-    name: "James Chen",
-    company: "Atlas Outdoor Gear",
-    review: "Professional, responsive, and incredibly talented. Our new website has significantly improved our online presence and conversions.",
+    name: "Joe Henderson",
+    company: "JFHenderson Law",
+    review: "Excellent in every respect. Super competent, super fast, great communication, confirmed that every detail was as I hoped, and even offered some helpful suggestions for the best way to achieve my goals. He also identified some issues that were getting in the way of keeping my site updated and fixed them lickety split!",
     rating: 5,
   },
   {
