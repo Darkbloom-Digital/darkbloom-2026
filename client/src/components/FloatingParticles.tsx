@@ -48,7 +48,7 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
           size: Math.random() * 20 + 15,
           speedX: (Math.random() - 0.5) * 0.4,
           speedY: (Math.random() - 0.5) * 0.4,
-          opacity: Math.random() * 0.15 + 0.05,
+          opacity: Math.random() * 0.25 + 0.15,
           rotation: Math.random() * Math.PI * 2,
           rotationSpeed: (Math.random() - 0.5) * 0.005,
         });
