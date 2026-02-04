@@ -47,11 +47,11 @@ export default function Services() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Shopify Expertise <br />
+                Ecommerce Expertise <br />
                 <span className="text-white/40">That Drives Growth</span>
               </h2>
               <p className="text-white/60 text-lg mb-8 leading-relaxed">
-                We don't just build websites; we engineer ecommerce experiences. As Shopify specialists, we understand the nuances of the platform better than anyone. From liquid coding to checkout customization, we unlock the full potential of your store.
+                We don't just build websites; we engineer digital experiences. As Shopify specialists, we unlock the full potential of your store—from custom themes to checkout optimization.
               </p>
               
               <div className="grid sm:grid-cols-2 gap-6">
@@ -118,10 +118,10 @@ export default function Services() {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Beyond Shopify
+              Custom Web Development
             </h3>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              Our expertise extends beyond ecommerce. We deliver full-stack digital solutions for businesses ready to grow.
+              Need something beyond ecommerce? We build stunning websites and web applications for any business.
             </p>
           </div>
           

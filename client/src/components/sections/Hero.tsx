@@ -25,13 +25,13 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#e61e50]/10 border border-[#e61e50]/30 text-[#e61e50] text-sm font-medium tracking-wider uppercase mb-6">
-            Premium Shopify Agency
+            Premium Web Development Agency
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
             We Build <span className="text-gradient">Digital Empires</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Specialized Shopify development and management for brands that demand perfection. High-performance, aesthetic, and conversion-focused.
+            Custom websites and Shopify stores built for brands that demand perfection. High-performance, aesthetic, and conversion-focused.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-full px-8 h-14 text-lg border-0">
