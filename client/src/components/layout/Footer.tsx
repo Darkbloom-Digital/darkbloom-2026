@@ -2,7 +2,7 @@ import logo from "@assets/DarkbloomLogoWordmarkFinalWhite_1768955288967.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-black py-16 border-t border-white/10">
+    <footer className="bg-black py-16 border-t border-white/10 relative z-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="flex flex-col items-center md:items-start gap-4">
