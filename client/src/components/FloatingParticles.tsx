@@ -37,7 +37,7 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
     window.addEventListener("resize", resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 25;
+    const particleCount = 12;
 
     const initParticles = () => {
       particles.length = 0;
