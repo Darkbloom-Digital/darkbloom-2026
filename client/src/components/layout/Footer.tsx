@@ -1,4 +1,6 @@
 import logo from "@assets/optimized/logo-wordmark.webp";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -16,10 +18,28 @@ export default function Footer() {
              </p>
           </div>
           
-          <div className="flex gap-8">
-            <a href="#" className="text-white/60 hover:text-[#e61e50] transition-colors">Instagram</a>
-            <a href="#" className="text-white/60 hover:text-[#e61e50] transition-colors">Twitter</a>
-            <a href="#" className="text-white/60 hover:text-[#e61e50] transition-colors">LinkedIn</a>
+          <div className="flex flex-col items-end gap-4">
+            <div className="flex gap-4">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+                <FaInstagram className="w-5 h-5" />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+                <FaFacebookF className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+                <FaLinkedinIn className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="flex flex-col items-end gap-2">
+              <a href="tel:423-951-1970" className="flex items-center gap-2 text-white/60 hover:text-[#e61e50] transition-colors text-sm">
+                <Phone className="w-4 h-4" />
+                (423) 951-1970
+              </a>
+              <a href="mailto:robdavis@darkbloomdigital.com" className="flex items-center gap-2 text-white/60 hover:text-[#e61e50] transition-colors text-sm">
+                <Mail className="w-4 h-4" />
+                robdavis@darkbloomdigital.com
+              </a>
+            </div>
           </div>
         </div>
         
