@@ -128,7 +128,7 @@ export default function Navbar() {
       </div>
 
       <nav
-        className="fixed top-10 left-0 right-0 z-50 bg-black border-b border-white/10"
+        className="fixed top-10 left-0 right-0 z-50 bg-black"
       >
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
