@@ -92,10 +92,10 @@ export default function Work() {
           ))}
         </div>
 
-        <div className="mt-12 text-center md:hidden">
-          <button className="flex items-center gap-2 text-[#e61e50] font-medium hover:text-white transition-colors mx-auto">
-            View All Projects <ArrowUpRight size={18} />
-          </button>
+        <div className="mt-12 text-center">
+          <a href="#" className="inline-flex items-center gap-2 text-[#e61e50] font-medium hover:text-white transition-colors">
+            View All <ArrowUpRight size={18} />
+          </a>
         </div>
       </div>
     </section>
