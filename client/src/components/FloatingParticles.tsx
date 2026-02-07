@@ -14,9 +14,10 @@ interface Particle {
 
 interface FloatingParticlesProps {
   className?: string;
+  count?: number;
 }
 
-export default function FloatingParticles({ className = "" }: FloatingParticlesProps) {
+export default function FloatingParticles({ className = "", count = 40 }: FloatingParticlesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
     window.addEventListener("resize", resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 40;
+    const particleCount = count;
 
     const initParticles = () => {
       particles.length = 0;
@@ -97,7 +98,7 @@ export default function FloatingParticles({ className = "" }: FloatingParticlesP
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [count]);
 
   return (
     <canvas

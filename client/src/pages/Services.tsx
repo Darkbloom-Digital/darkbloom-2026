@@ -47,7 +47,7 @@ const services = [
 export default function Services() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#e61e50] selection:text-white relative">
-      <FloatingParticles className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" />
+      <FloatingParticles className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" count={10} />
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
