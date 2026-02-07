@@ -12,7 +12,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend
 - **Framework**: React 18 with TypeScript
-- **Routing**: Wouter (lightweight client-side router) with routes for Home (`/`), Portfolio (`/portfolio`), and a 404 page
+- **Routing**: Wouter (lightweight client-side router) with routes for Home (`/`), Portfolio (`/portfolio`), Services (`/services`), Contact (`/contact`), Case Studies (`/case-studies`), Performance Audit (`/performance-audit`), CRO Blueprint (`/cro-blueprint`), and a 404 page
 - **Styling**: Tailwind CSS v4 with CSS variables for theming, dark mode by default (brand colors: dark backgrounds with `#e61e50` red accent)
 - **UI Components**: shadcn/ui (new-york style) built on Radix UI primitives — extensive component library in `client/src/components/ui/`
 - **State Management**: TanStack React Query for server state
@@ -50,7 +50,7 @@ client/                  # Frontend React app
       ui/                # shadcn/ui components
     hooks/               # Custom React hooks
     lib/                 # Utilities (queryClient, cn helper)
-    pages/               # Page components (Home, Portfolio, NotFound)
+    pages/               # Page components (Home, Portfolio, Services, Contact, CaseStudies, PerformanceAudit, CroBlueprint, NotFound)
 server/                  # Express backend
   index.ts               # Server entry point
   routes.ts              # API route registration

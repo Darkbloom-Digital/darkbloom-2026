@@ -1,5 +1,5 @@
-import { Link, useLocation } from "wouter";
-import { useState, useEffect, useCallback } from "react";
+import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import { Menu, X, Mail, MessageSquare, ChevronDown, Phone } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
@@ -59,41 +59,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [location, setLocation] = useLocation();
-
-  const navigateToSection = useCallback((hash: string) => {
-    if (location !== "/") {
-      setLocation("/");
-      setTimeout(() => {
-        const el = document.querySelector(hash);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 300);
-    } else {
-      const el = document.querySelector(hash);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [location, setLocation]);
-
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "#services" },
+    { name: "Services", href: "/services" },
     { 
       name: "Our Work", 
-      href: "#work",
+      href: "/portfolio",
       dropdown: [
         { name: "Featured Projects", href: "/portfolio" },
-        { name: "Case Studies", href: "#case-studies" },
+        { name: "Case Studies", href: "/case-studies" },
       ]
     },
     { 
       name: "Resources", 
-      href: "#resources",
+      href: "/performance-audit",
       dropdown: [
-        { name: "Shopify Performance Audit", href: "#performance-audit" },
-        { name: "CRO Blueprint", href: "#cro-blueprint" },
+        { name: "Shopify Performance Audit", href: "/performance-audit" },
+        { name: "CRO Blueprint", href: "/cro-blueprint" },
       ]
     },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -151,52 +136,35 @@ export default function Navbar() {
                 onMouseEnter={() => link.dropdown && setOpenDropdown(link.name)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.href === "/" ? (
+                {link.dropdown ? (
+                  <button
+                    className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap cursor-pointer"
+                    data-testid={`button-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.name}
+                    <ChevronDown size={18} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                  </button>
+                ) : (
                   <Link
-                    href="/"
+                    href={link.href}
                     className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap"
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {link.name}
                   </Link>
-                ) : (
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (link.href.startsWith("#")) {
-                        navigateToSection(link.href);
-                      }
-                    }}
-                    className="text-sm font-medium text-white/80 hover:text-[#e61e50] transition-colors uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap"
-                  >
-                    {link.name}
-                    {link.dropdown && <ChevronDown size={18} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />}
-                  </button>
                 )}
                 {link.dropdown && openDropdown === link.name && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
                     <div className="bg-zinc-900/95 backdrop-blur-md border border-white/10 rounded-lg py-2 min-w-[200px] shadow-xl">
                       {link.dropdown.map((item) => (
-                        item.href.startsWith('/') ? (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
-                          >
-                            {item.name}
-                          </Link>
-                        ) : (
-                          <button
-                            key={item.name}
-                            onClick={() => {
-                              navigateToSection(item.href);
-                              setOpenDropdown(null);
-                            }}
-                            className="block w-full text-left px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
-                          >
-                            {item.name}
-                          </button>
-                        )
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="block px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
+                          onClick={() => setOpenDropdown(null)}
+                        >
+                          {item.name}
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -251,52 +219,26 @@ export default function Navbar() {
                     {openDropdown === link.name && (
                       <div className="pl-4 flex flex-col gap-2 mt-1 mb-2">
                         {link.dropdown.map((item) => (
-                          item.href.startsWith('/') ? (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              className="text-base text-white/70 hover:text-[#e61e50] py-1"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {item.name}
-                            </Link>
-                          ) : (
-                            <button
-                              key={item.name}
-                              className="text-left text-base text-white/70 hover:text-[#e61e50] py-1"
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                navigateToSection(item.href);
-                              }}
-                            >
-                              {item.name}
-                            </button>
-                          )
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="text-base text-white/70 hover:text-[#e61e50] py-1"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
                         ))}
                       </div>
                     )}
                   </div>
-                ) : link.href === "/" ? (
+                ) : (
                   <Link
-                    href="/"
+                    href={link.href}
                     className="block text-lg font-medium text-white hover:text-[#e61e50] py-2"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
-                ) : (
-                  <button
-                    className="block text-lg font-medium text-white hover:text-[#e61e50] py-2"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      if (link.href.startsWith("#")) navigateToSection(link.href);
-                    }}
-                  >
-                    {link.name}
-                  </button>
                 )}
               </div>
             ))}
