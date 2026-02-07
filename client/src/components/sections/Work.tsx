@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "wouter";
 import austinImg from "@assets/optimized/austin-portfolio.webp";
 import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
@@ -93,9 +94,9 @@ export default function Work() {
         </div>
 
         <div className="mt-12 text-center">
-          <a href="#" className="text-[#e61e50] font-medium hover:text-white transition-colors underline underline-offset-4">
+          <Link href="/portfolio" className="text-[#e61e50] font-medium hover:text-white transition-colors underline underline-offset-4">
             View All
-          </a>
+          </Link>
         </div>
       </div>
     </section>

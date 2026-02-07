@@ -66,7 +66,7 @@ export default function Navbar() {
       name: "Our Work", 
       href: "#work",
       dropdown: [
-        { name: "Featured Projects", href: "#work" },
+        { name: "Featured Projects", href: "/portfolio" },
         { name: "Case Studies", href: "#case-studies" },
       ]
     },
@@ -149,13 +149,23 @@ export default function Navbar() {
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
                     <div className="bg-zinc-900/95 backdrop-blur-md border border-white/10 rounded-lg py-2 min-w-[200px] shadow-xl">
                       {link.dropdown.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
-                        >
-                          {item.name}
-                        </a>
+                        item.href.startsWith('/') ? (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="block px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
+                          >
+                            {item.name}
+                          </Link>
+                        ) : (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className="block px-4 py-2 text-sm text-white/70 hover:text-[#e61e50] hover:bg-white/5 transition-colors"
+                          >
+                            {item.name}
+                          </a>
+                        )
                       ))}
                     </div>
                   </div>
