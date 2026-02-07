@@ -93,7 +93,7 @@ export default function Work() {
         </div>
 
         <div className="mt-12 text-center">
-          <a href="#" className="text-[#e61e50] font-medium hover:text-white transition-colors underline">
+          <a href="#" className="text-[#e61e50] font-medium hover:text-white transition-colors underline underline-offset-4">
             View All
           </a>
         </div>
