@@ -8,6 +8,7 @@ import austinImg from "@assets/optimized/austin-portfolio.webp";
 import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
+import psImg from "@assets/optimized/ps-portfolio.webp";
 
 const filters = ["All", "Custom Website", "SaaS Platform", "Ecommerce"] as const;
 type Filter = (typeof filters)[number];
@@ -33,6 +34,13 @@ const projects = [
     description: "A software-as-a-service platform built with modern web technologies for streamlined document processing.",
     url: "https://docpeeler.com",
     image: docpeelerImg
+  },
+  {
+    title: "Performance Snapshot",
+    category: "SaaS Platform",
+    description: "A website speed analysis tool that runs health checks on mobile and desktop performance, helping brands optimize their online presence.",
+    url: "https://performance-snapshot.replit.app/",
+    image: psImg
   },
   {
     title: "Hatta Boy Hat Co",
