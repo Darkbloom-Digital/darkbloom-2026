@@ -128,9 +128,7 @@ export default function Navbar() {
       </div>
 
       <nav
-        className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
-        }`}
+        className="fixed top-10 left-0 right-0 z-50 bg-black border-b border-white/10"
       >
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
