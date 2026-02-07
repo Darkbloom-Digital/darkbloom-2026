@@ -93,8 +93,8 @@ export default function Work() {
         </div>
 
         <div className="mt-12 text-center">
-          <a href="#" className="inline-flex items-center gap-2 text-[#e61e50] font-medium hover:text-white transition-colors">
-            View All <ArrowUpRight size={18} />
+          <a href="#" className="text-[#e61e50] font-medium hover:text-white transition-colors underline">
+            View All
           </a>
         </div>
       </div>
