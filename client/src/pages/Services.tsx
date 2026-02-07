@@ -72,7 +72,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group rounded-2xl border border-white/5 hover:border-[#e61e50]/30 bg-white/[0.02] p-8 transition-all"
+                className="group rounded-2xl border border-white/10 hover:border-[#e61e50]/30 bg-zinc-900 p-8 transition-all"
                 data-testid={`card-service-${index}`}
               >
                 <div className="mb-5 text-[#e61e50] bg-white/5 w-16 h-16 rounded-xl flex items-center justify-center group-hover:bg-[#e61e50]/10 transition-colors">

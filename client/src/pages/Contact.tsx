@@ -107,7 +107,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="lg:col-span-3"
             >
-              <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-10">
+              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8 md:p-10">
                 <form onSubmit={handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">

@@ -79,6 +79,7 @@ export default function CaseStudies() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 data-testid={`card-casestudy-${index}`}
+                className="rounded-2xl border border-white/10 bg-zinc-900 p-8 md:p-10"
               >
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
                   <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
@@ -112,7 +113,7 @@ export default function CaseStudies() {
 
                     <div className="grid grid-cols-3 gap-4">
                       {study.results.map((result, i) => (
-                        <div key={i} className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                        <div key={i} className="text-center p-3 rounded-xl bg-zinc-900 border border-white/10">
                           <div className="text-[#e61e50] flex justify-center mb-1">{result.icon}</div>
                           <p className="text-xl font-bold">{result.value}</p>
                           <p className="text-white/40 text-xs">{result.label}</p>

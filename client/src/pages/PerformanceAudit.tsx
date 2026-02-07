@@ -65,7 +65,7 @@ export default function PerformanceAudit() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center hover:border-[#e61e50]/30 transition-all"
+                className="rounded-2xl border border-white/10 bg-zinc-900 p-6 text-center hover:border-[#e61e50]/30 transition-all"
                 data-testid={`card-audit-step-${index}`}
               >
                 <div className="text-[#e61e50] bg-white/5 w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -84,7 +84,7 @@ export default function PerformanceAudit() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12">
+            <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
                 What You <span className="text-[#e61e50]">Get</span>
               </h2>

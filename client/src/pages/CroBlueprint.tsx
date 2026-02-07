@@ -67,7 +67,7 @@ export default function CroBlueprint() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 hover:border-[#e61e50]/30 transition-all group"
+                className="rounded-2xl border border-white/10 bg-zinc-900 p-8 hover:border-[#e61e50]/30 transition-all group"
                 data-testid={`card-cro-pillar-${index}`}
               >
                 <div className="text-[#e61e50] bg-white/5 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#e61e50]/10 transition-colors">
@@ -85,7 +85,7 @@ export default function CroBlueprint() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-8 md:p-12">
+            <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8 md:p-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
                 Our CRO <span className="text-[#e61e50]">Checklist</span>
               </h2>
