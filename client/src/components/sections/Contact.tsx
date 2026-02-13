@@ -135,7 +135,6 @@ export default function Contact() {
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#e61e50] opacity-10 blur-[150px] rounded-full" />
-         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-900 opacity-20 blur-[150px] rounded-full" />
       </div>
     </section>
   );
