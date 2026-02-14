@@ -294,69 +294,73 @@ export default function Navbar() {
       {/* Contact Offcanvas */}
       <Sheet open={contactOpen} onOpenChange={setContactOpen}>
         <SheetContent className="bg-zinc-900 border-white/10 text-white w-full sm:max-w-lg overflow-y-auto">
-          <SheetHeader>
-            <SheetTitle className="text-2xl font-bold text-white">Get in Touch</SheetTitle>
-            <SheetDescription className="text-white/60">
+          <SheetHeader className="pb-2">
+            <SheetTitle className="text-xl font-bold text-white">Get in Touch</SheetTitle>
+            <SheetDescription className="text-white/60 text-sm">
               Tell us about your project and we'll get back to you within 24 hours.
             </SheetDescription>
           </SheetHeader>
-          <form onSubmit={handleSubmit((data) => contactMutation.mutate(data))} className="space-y-5 mt-8">
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">Name *</label>
-              <Input
-                data-testid="offcanvas-input-name"
-                placeholder="John Doe"
-                className="bg-white/5 border-white/10 text-white h-12"
-                {...register("name", { required: "Name is required" })}
-              />
-              {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
+          <form onSubmit={handleSubmit((data) => contactMutation.mutate(data))} className="space-y-3 mt-4">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1">
+                <label className="text-sm font-medium text-white/80">Name *</label>
+                <Input
+                  data-testid="offcanvas-input-name"
+                  placeholder="John Doe"
+                  className="bg-white/5 border-white/10 text-white h-10"
+                  {...register("name", { required: "Name is required" })}
+                />
+                {errors.name && <p className="text-red-400 text-xs">{errors.name.message}</p>}
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium text-white/80">Email *</label>
+                <Input
+                  data-testid="offcanvas-input-email"
+                  type="email"
+                  placeholder="john@company.com"
+                  className="bg-white/5 border-white/10 text-white h-10"
+                  {...register("email", { 
+                    required: "Email is required",
+                    pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email" }
+                  })}
+                />
+                {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
+              </div>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">Email *</label>
-              <Input
-                data-testid="offcanvas-input-email"
-                type="email"
-                placeholder="john@company.com"
-                className="bg-white/5 border-white/10 text-white h-12"
-                {...register("email", { 
-                  required: "Email is required",
-                  pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email" }
-                })}
-              />
-              {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1">
+                <label className="text-sm font-medium text-white/80">Project Type *</label>
+                <select
+                  data-testid="offcanvas-select-project-type"
+                  className="flex h-10 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#e61e50]"
+                  {...register("projectType", { required: "Required" })}
+                >
+                  <option value="" className="bg-zinc-900">Select a project type</option>
+                  <option value="Custom Website" className="bg-zinc-900">Custom Website</option>
+                  <option value="Shopify Store" className="bg-zinc-900">Shopify Store</option>
+                  <option value="Website Redesign" className="bg-zinc-900">Website Redesign</option>
+                  <option value="Ongoing Support" className="bg-zinc-900">Ongoing Support</option>
+                  <option value="Other" className="bg-zinc-900">Other</option>
+                </select>
+                {errors.projectType && <p className="text-red-400 text-xs">{errors.projectType.message}</p>}
+              </div>
+              <div className="space-y-1">
+                <label className="text-sm font-medium text-white/80">Website URL (optional)</label>
+                <Input
+                  data-testid="offcanvas-input-website-url"
+                  type="text"
+                  placeholder="https://yourwebsite.com"
+                  className="bg-white/5 border-white/10 text-white h-10"
+                  {...register("websiteUrl")}
+                />
+              </div>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">Project Type *</label>
-              <select
-                data-testid="offcanvas-select-project-type"
-                className="flex h-12 w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#e61e50]"
-                {...register("projectType", { required: "Required" })}
-              >
-                <option value="" className="bg-zinc-900">Select a project type</option>
-                <option value="Custom Website" className="bg-zinc-900">Custom Website</option>
-                <option value="Shopify Store" className="bg-zinc-900">Shopify Store</option>
-                <option value="Website Redesign" className="bg-zinc-900">Website Redesign</option>
-                <option value="Ongoing Support" className="bg-zinc-900">Ongoing Support</option>
-                <option value="Other" className="bg-zinc-900">Other</option>
-              </select>
-              {errors.projectType && <p className="text-red-400 text-xs">{errors.projectType.message}</p>}
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-white/80">Current Website URL (if you have one)</label>
-              <Input
-                data-testid="offcanvas-input-website-url"
-                type="text"
-                placeholder="https://yourwebsite.com"
-                className="bg-white/5 border-white/10 text-white h-12"
-                {...register("websiteUrl")}
-              />
-            </div>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <label className="text-sm font-medium text-white/80">Details *</label>
               <Textarea
                 data-testid="offcanvas-textarea-details"
                 placeholder="Tell us about your project..."
-                className="bg-white/5 border-white/10 text-white min-h-[120px]"
+                className="bg-white/5 border-white/10 text-white min-h-[100px]"
                 {...register("details", { required: "Please provide details" })}
               />
               {errors.details && <p className="text-red-400 text-xs">{errors.details.message}</p>}
@@ -364,7 +368,7 @@ export default function Navbar() {
             <Button
               data-testid="offcanvas-button-submit"
               type="submit"
-              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-12 mt-4 border-0 cursor-pointer"
+              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-11 border-0 cursor-pointer"
               disabled={contactMutation.isPending}
             >
               {contactMutation.isPending ? "Sending..." : "Send Message"}
