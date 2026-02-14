@@ -59,25 +59,25 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-2 space-y-8"
+              className="lg:col-span-2 space-y-8 relative z-10"
             >
-              <div>
+              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8">
                 <h3 className="text-xl font-bold mb-6">Contact Info</h3>
                 <div className="space-y-5">
                   <a href="tel:+14239511970" className="flex items-center gap-4 text-white/60 hover:text-[#e61e50] transition-colors group" data-testid="link-phone">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-[#e61e50]/10 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center group-hover:bg-[#e61e50]/20 transition-colors">
                       <Phone className="w-5 h-5 text-[#e61e50]" />
                     </div>
                     <span>423-951-1970</span>
                   </a>
                   <a href="mailto:robdavis@darkbloomdigital.com" className="flex items-center gap-4 text-white/60 hover:text-[#e61e50] transition-colors group" data-testid="link-email">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-[#e61e50]/10 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center group-hover:bg-[#e61e50]/20 transition-colors">
                       <Mail className="w-5 h-5 text-[#e61e50]" />
                     </div>
                     <span>robdavis@darkbloomdigital.com</span>
                   </a>
                   <div className="flex items-center gap-4 text-white/60" data-testid="text-location">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-[#e61e50]" />
                     </div>
                     <span>Cleveland, TN</span>
@@ -85,16 +85,16 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div>
+              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8">
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
                 <div className="flex gap-3">
-                  <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/10 transition-all" data-testid="link-instagram">
+                  <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-instagram">
                     <FaInstagram size={20} />
                   </a>
-                  <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/10 transition-all" data-testid="link-facebook">
+                  <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-facebook">
                     <FaFacebookF size={18} />
                   </a>
-                  <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/10 transition-all" data-testid="link-linkedin">
+                  <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-linkedin">
                     <FaLinkedinIn size={20} />
                   </a>
                 </div>
