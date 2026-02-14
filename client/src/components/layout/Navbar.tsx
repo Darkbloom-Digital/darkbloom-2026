@@ -85,6 +85,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
@@ -228,27 +237,39 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-zinc-950 border-b border-white/10 p-6 flex flex-col gap-2 shadow-xl max-h-[80vh] overflow-y-auto">
+      </nav>
+
+      {/* Full-Screen Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-[60] bg-zinc-950 flex flex-col">
+          <div className="flex items-center justify-between px-6 h-[120px] shrink-0">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="inline-flex items-center">
+              <img src={logo} alt="Darkbloom Digital" className="h-12 w-auto object-contain mix-blend-screen" />
+            </Link>
+            <button onClick={() => setMobileMenuOpen(false)} className="text-white">
+              <X size={28} />
+            </button>
+          </div>
+
+          <div className="flex-1 flex flex-col justify-center px-8 gap-2">
             {navLinks.map((link) => (
               <div key={link.name}>
                 {link.dropdown ? (
                   <div>
                     <button
                       onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
-                      className="w-full flex items-center justify-between text-lg font-medium text-white hover:text-[#e61e50] py-2"
+                      className="w-full flex items-center justify-between text-2xl font-semibold text-white hover:text-[#e61e50] py-3 transition-colors"
                     >
                       {link.name}
-                      <ChevronDown size={18} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />
+                      <ChevronDown size={22} className={`transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`} />
                     </button>
                     {openDropdown === link.name && (
-                      <div className="pl-4 flex flex-col gap-2 mt-1 mb-2">
+                      <div className="pl-4 flex flex-col gap-1 mb-2">
                         {link.dropdown.map((item) => (
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="text-base text-white/70 hover:text-[#e61e50] py-1"
+                            className="text-lg text-white/60 hover:text-[#e61e50] py-2 transition-colors"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
@@ -260,7 +281,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="block text-lg font-medium text-white hover:text-[#e61e50] py-2"
+                    className="block text-2xl font-semibold text-white hover:text-[#e61e50] py-3 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -268,24 +289,38 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <div className="flex gap-4 mt-4 pt-4 border-t border-white/10">
+          </div>
+
+          <div className="shrink-0 px-8 pb-10 flex flex-col gap-4">
+            <div className="flex gap-3">
               <Button 
                 variant="outline" 
-                className="flex-1 border-white/20"
+                className="flex-1 border-white/20 h-12"
                 onClick={() => { setMobileMenuOpen(false); setNewsletterOpen(true); }}
               >
                 <Bell size={16} className="mr-2" /> Newsletter
               </Button>
               <Button 
-                className="flex-1 bg-[#e61e50]"
+                className="flex-1 bg-[#e61e50] h-12"
                 onClick={() => { setMobileMenuOpen(false); setContactOpen(true); }}
               >
                 <Mail size={16} className="mr-2" /> Contact
               </Button>
             </div>
+            <div className="flex items-center justify-center gap-5 pt-2">
+              <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#e61e50] transition-colors">
+                <FaInstagram size={20} />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#e61e50] transition-colors">
+                <FaFacebookF size={18} />
+              </a>
+              <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#e61e50] transition-colors">
+                <FaLinkedinIn size={20} />
+              </a>
+            </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
 
       {/* Newsletter Popup */}
       <Dialog open={newsletterOpen} onOpenChange={setNewsletterOpen}>
