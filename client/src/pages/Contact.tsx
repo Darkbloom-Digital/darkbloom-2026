@@ -59,9 +59,9 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-2 space-y-8 relative z-10"
+              className="lg:col-span-2 space-y-8"
             >
-              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8">
+              <div>
                 <h3 className="text-xl font-bold mb-6">Contact Info</h3>
                 <div className="space-y-5">
                   <a href="tel:+14239511970" className="flex items-center gap-4 text-white/60 hover:text-[#e61e50] transition-colors group" data-testid="link-phone">
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8">
+              <div>
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
                 <div className="flex gap-3">
                   <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-instagram">
