@@ -294,7 +294,7 @@ export default function Navbar() {
             <DialogTitle className="text-2xl font-bold">Stay in the Loop</DialogTitle>
             <DialogDescription className="text-white/60">
 
-              We send out our newsletter bi-weekly with insights on web design trends, ecommerce tips, and exclusive offers.
+              We send out our newsletter bi-weekly with actionable strategies to grow your brand online, boost conversions, and stay ahead of the competition.
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleNewsletterSubmit} className="space-y-4 mt-4">
