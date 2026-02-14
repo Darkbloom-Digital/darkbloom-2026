@@ -251,7 +251,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center px-8 gap-2">
+          <div className="px-8 flex flex-col gap-2">
             {navLinks.map((link) => (
               <div key={link.name}>
                 {link.dropdown ? (
@@ -289,25 +289,26 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-          </div>
 
-          <div className="shrink-0 px-8 pb-10 flex flex-col gap-4">
-            <div className="flex gap-3">
+            <div className="flex gap-3 mt-6">
               <Button 
                 variant="outline" 
-                className="flex-1 border-white/20 h-12"
+                className="flex-1 border-0 bg-white/10 h-12"
                 onClick={() => { setMobileMenuOpen(false); setNewsletterOpen(true); }}
               >
                 <Bell size={16} className="mr-2" /> Newsletter
               </Button>
               <Button 
-                className="flex-1 bg-[#e61e50] h-12"
+                className="flex-1 bg-[#e61e50] border-0 h-12"
                 onClick={() => { setMobileMenuOpen(false); setContactOpen(true); }}
               >
                 <Mail size={16} className="mr-2" /> Contact
               </Button>
             </div>
-            <div className="flex items-center justify-center gap-5 pt-2">
+          </div>
+
+          <div className="mt-auto shrink-0 px-8 pb-10">
+            <div className="flex items-center justify-center gap-5">
               <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#e61e50] transition-colors">
                 <FaInstagram size={20} />
               </a>
