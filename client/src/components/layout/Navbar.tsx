@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, MessageSquare, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, Mail, Bell, ChevronDown, Phone } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -202,20 +202,20 @@ export default function Navbar() {
           {/* Icons - Right */}
           <div className="flex-1 flex items-center justify-end gap-4">
             <button
-              data-testid="button-newsletter"
-              onClick={() => setNewsletterOpen(true)}
-              className="hidden md:flex w-10 h-10 rounded-full border border-white/20 items-center justify-center text-white/70 hover:text-[#e61e50] hover:border-[#e61e50] transition-colors"
-              aria-label="Subscribe to newsletter"
-            >
-              <Mail size={18} />
-            </button>
-            <button
               data-testid="button-contact-offcanvas"
               onClick={() => setContactOpen(true)}
               className="hidden md:flex w-10 h-10 rounded-full border border-white/20 items-center justify-center text-white/70 hover:text-[#e61e50] hover:border-[#e61e50] transition-colors"
               aria-label="Contact us"
             >
-              <MessageSquare size={18} />
+              <Mail size={18} />
+            </button>
+            <button
+              data-testid="button-newsletter"
+              onClick={() => setNewsletterOpen(true)}
+              className="hidden md:flex w-10 h-10 rounded-full border border-white/20 items-center justify-center text-white/70 hover:text-[#e61e50] hover:border-[#e61e50] transition-colors"
+              aria-label="Subscribe to newsletter"
+            >
+              <Bell size={18} />
             </button>
 
             {/* Mobile Toggle */}
@@ -274,13 +274,13 @@ export default function Navbar() {
                 className="flex-1 border-white/20"
                 onClick={() => { setMobileMenuOpen(false); setNewsletterOpen(true); }}
               >
-                <Mail size={16} className="mr-2" /> Newsletter
+                <Bell size={16} className="mr-2" /> Newsletter
               </Button>
               <Button 
                 className="flex-1 bg-[#e61e50]"
                 onClick={() => { setMobileMenuOpen(false); setContactOpen(true); }}
               >
-                <MessageSquare size={16} className="mr-2" /> Contact
+                <Mail size={16} className="mr-2" /> Contact
               </Button>
             </div>
           </div>
