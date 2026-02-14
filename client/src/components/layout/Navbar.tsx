@@ -333,12 +333,23 @@ export default function Navbar() {
                 {...register("projectType", { required: "Required" })}
               >
                 <option value="" className="bg-zinc-900">Select a project type</option>
-                <option value="New Shopify Store" className="bg-zinc-900">New Shopify Store</option>
-                <option value="Store Migration" className="bg-zinc-900">Store Migration</option>
-                <option value="Custom Development" className="bg-zinc-900">Custom Development</option>
-                <option value="Ongoing Management" className="bg-zinc-900">Ongoing Management</option>
+                <option value="Custom Website" className="bg-zinc-900">Custom Website</option>
+                <option value="Shopify Store" className="bg-zinc-900">Shopify Store</option>
+                <option value="Website Redesign" className="bg-zinc-900">Website Redesign</option>
+                <option value="Ongoing Support" className="bg-zinc-900">Ongoing Support</option>
+                <option value="Other" className="bg-zinc-900">Other</option>
               </select>
               {errors.projectType && <p className="text-red-400 text-xs">{errors.projectType.message}</p>}
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium text-white/80">Current Website URL (if you have one)</label>
+              <Input
+                data-testid="offcanvas-input-website-url"
+                type="text"
+                placeholder="https://yourwebsite.com"
+                className="bg-white/5 border-white/10 text-white h-12"
+                {...register("websiteUrl")}
+              />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium text-white/80">Details *</label>
@@ -353,7 +364,7 @@ export default function Navbar() {
             <Button
               data-testid="offcanvas-button-submit"
               type="submit"
-              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-12 mt-4"
+              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-12 mt-4 border-0 cursor-pointer"
               disabled={contactMutation.isPending}
             >
               {contactMutation.isPending ? "Sending..." : "Send Message"}

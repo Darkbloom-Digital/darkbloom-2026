@@ -179,7 +179,7 @@ export default function ContactPage() {
                     data-testid="button-contact-submit"
                     type="submit"
                     size="lg"
-                    className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl border-0"
+                    className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl border-0 cursor-pointer"
                     disabled={mutation.isPending}
                   >
                     {mutation.isPending ? "Sending..." : "Send Message"}
