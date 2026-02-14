@@ -33,15 +33,6 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/contact", async (req, res) => {
-    try {
-      const inquiries = await storage.getAllContactInquiries();
-      res.json(inquiries);
-    } catch (error) {
-      console.error("Error fetching contact inquiries:", error);
-      res.status(500).json({ error: "Internal server error" });
-    }
-  });
 
   return httpServer;
 }
