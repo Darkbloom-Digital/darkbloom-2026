@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Hero() {
   return (
@@ -18,13 +19,17 @@ export default function Hero() {
             Custom websites and Shopify stores, done the right way.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-2xl px-8 h-14 text-lg border-0">
-              Start Your Project
-            </Button>
-            <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/5 rounded-2xl px-8 h-14 text-lg group">
-              View Our Work
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="bg-[#e61e50] hover:bg-[#c41540] text-white rounded-2xl px-8 h-14 text-lg border-0 cursor-pointer">
+                Start Your Project
+              </Button>
+            </Link>
+            <Link href="/portfolio">
+              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/5 rounded-2xl px-8 h-14 text-lg group cursor-pointer">
+                View Our Work
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
