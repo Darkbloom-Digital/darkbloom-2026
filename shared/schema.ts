@@ -30,6 +30,12 @@ export const contactInquiries = pgTable("contact_inquiries", {
 export const insertContactInquirySchema = createInsertSchema(contactInquiries).omit({
   id: true,
   createdAt: true,
+}).extend({
+  name: z.string().min(1).max(200).trim(),
+  email: z.string().email().max(320).trim().toLowerCase(),
+  projectType: z.string().min(1).max(100).trim(),
+  websiteUrl: z.string().max(2000).trim().nullable().optional(),
+  details: z.string().min(1).max(5000).trim(),
 });
 
 export type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
@@ -44,6 +50,8 @@ export const newsletterSubscribers = pgTable("newsletter_subscribers", {
 export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).omit({
   id: true,
   createdAt: true,
+}).extend({
+  email: z.string().email().max(320).trim().toLowerCase(),
 });
 
 export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;

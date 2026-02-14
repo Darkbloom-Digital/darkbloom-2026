@@ -78,12 +78,34 @@ db/                      # Database connection setup
 - **drizzle-orm** + **drizzle-kit**: Database ORM and migration tooling
 - **pg**: PostgreSQL client driver
 - **express**: HTTP server framework (v5)
+- **helmet**: Security headers (CSP, HSTS, X-Frame-Options, etc.)
+- **express-rate-limit**: API endpoint rate limiting (10 req/15min on contact & newsletter)
 - **@tanstack/react-query**: Async state management
 - **framer-motion**: Animation library
 - **react-hook-form** + **zod**: Form handling and validation
 - **sonner**: Toast notifications
 - **wouter**: Client-side routing
 - **shadcn/ui ecosystem**: Radix UI primitives, class-variance-authority, tailwind-merge, clsx
+
+### Security Hardening
+- **Helmet**: Full security headers including Content Security Policy (allows self, Google Fonts, inline styles)
+- **Rate Limiting**: 10 requests per 15 minutes on `/api/contact` and `/api/newsletter`
+- **Input Validation**: Zod schemas with email format, max lengths (name: 200, email: 320, details: 5000), trimming, lowercase email normalization
+- **Body Size Limits**: JSON and URL-encoded body capped at 10kb
+- **XSS Prevention**: All user input HTML-escaped in email templates
+- **SQL Injection**: Protected via Drizzle ORM parameterized queries
+
+### Performance Optimizations
+- **Code Splitting**: React.lazy + Suspense for all pages except Home
+- **Image Optimization**: All images served as WebP format from `attached_assets/optimized/`
+- **Static Asset Caching**: Hashed assets cached 1 year (immutable); HTML/robots/sitemap no-cache; images 24h
+- **Font Loading**: Preconnect + dns-prefetch for Google Fonts
+
+### SEO Configuration
+- **Meta Tags**: title, description, keywords, author, robots, og:title/description/type/url/image/site_name, twitter cards
+- **robots.txt**: Allows all crawlers, references sitemap at darkbloomdigital.com
+- **sitemap.xml**: All 7 pages with priority and change frequency
+- **Theme Color**: `#09090b` (zinc-950 dark background)
 
 ### Replit-Specific Integrations
 - `@replit/vite-plugin-runtime-error-modal`: Error overlay in development

@@ -10,10 +10,21 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  const noCacheFiles = [".html", "robots.txt", "sitemap.xml"];
+  app.use(express.static(distPath, {
+    maxAge: "1y",
+    immutable: true,
+    setHeaders: (res, filePath) => {
+      if (noCacheFiles.some(ext => filePath.endsWith(ext))) {
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+      } else if (filePath.endsWith(".png") || filePath.endsWith(".jpg") || filePath.endsWith(".ico")) {
+        res.setHeader("Cache-Control", "public, max-age=86400");
+      }
+    },
+  }));
 
-  // fall through to index.html if the file doesn't exist
   app.use("/{*path}", (_req, res) => {
+    res.setHeader("Cache-Control", "no-cache");
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }

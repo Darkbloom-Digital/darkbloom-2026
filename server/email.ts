@@ -1,5 +1,9 @@
 import { Resend } from 'resend';
 
+function escapeHtml(str: string): string {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
+
 let connectionSettings: any;
 
 async function getCredentials() {
@@ -49,15 +53,16 @@ interface ContactEmailData {
 export async function sendNewsletterNotification(email: string) {
   const { client, fromEmail } = await getUncachableResendClient();
 
+  const safeEmail = escapeHtml(email);
   await client.emails.send({
     from: fromEmail,
     to: 'robdavis@darkbloomdigital.com',
-    subject: `New Newsletter Subscriber — ${email}`,
+    subject: `New Newsletter Subscriber — ${safeEmail}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #18181b; color: #ffffff; border-radius: 12px;">
         <h2 style="color: #e61e50; margin-bottom: 24px;">New Newsletter Subscriber</h2>
         <p style="color: #a1a1aa; margin: 0 0 8px 0;">Email</p>
-        <p style="color: #ffffff; margin: 0;"><a href="mailto:${email}" style="color: #e61e50;">${email}</a></p>
+        <p style="color: #ffffff; margin: 0;"><a href="mailto:${safeEmail}" style="color: #e61e50;">${safeEmail}</a></p>
       </div>
     `,
   });
@@ -66,34 +71,40 @@ export async function sendNewsletterNotification(email: string) {
 export async function sendContactNotification(data: ContactEmailData) {
   const { client, fromEmail } = await getUncachableResendClient();
 
+  const safeName = escapeHtml(data.name);
+  const safeEmail = escapeHtml(data.email);
+  const safeProjectType = escapeHtml(data.projectType);
+  const safeDetails = escapeHtml(data.details);
+  const safeUrl = data.websiteUrl ? escapeHtml(data.websiteUrl) : null;
+
   await client.emails.send({
     from: fromEmail,
     to: 'robdavis@darkbloomdigital.com',
-    subject: `New Inquiry from ${data.name} — ${data.projectType}`,
+    subject: `New Inquiry from ${safeName} — ${safeProjectType}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #18181b; color: #ffffff; border-radius: 12px;">
         <h2 style="color: #e61e50; margin-bottom: 24px;">New Contact Inquiry</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
             <td style="padding: 8px 0; color: #a1a1aa; width: 140px;">Name</td>
-            <td style="padding: 8px 0; color: #ffffff;">${data.name}</td>
+            <td style="padding: 8px 0; color: #ffffff;">${safeName}</td>
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #a1a1aa;">Email</td>
-            <td style="padding: 8px 0;"><a href="mailto:${data.email}" style="color: #e61e50;">${data.email}</a></td>
+            <td style="padding: 8px 0;"><a href="mailto:${safeEmail}" style="color: #e61e50;">${safeEmail}</a></td>
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #a1a1aa;">Project Type</td>
-            <td style="padding: 8px 0; color: #ffffff;">${data.projectType}</td>
+            <td style="padding: 8px 0; color: #ffffff;">${safeProjectType}</td>
           </tr>
-          ${data.websiteUrl ? `<tr>
+          ${safeUrl ? `<tr>
             <td style="padding: 8px 0; color: #a1a1aa;">Website URL</td>
-            <td style="padding: 8px 0;"><a href="${data.websiteUrl}" style="color: #e61e50;">${data.websiteUrl}</a></td>
+            <td style="padding: 8px 0;"><a href="${safeUrl}" style="color: #e61e50;">${safeUrl}</a></td>
           </tr>` : ''}
         </table>
         <div style="margin-top: 20px; padding: 16px; background: #27272a; border-radius: 8px;">
           <p style="color: #a1a1aa; margin: 0 0 8px 0; font-size: 14px;">Details</p>
-          <p style="color: #ffffff; margin: 0; white-space: pre-wrap;">${data.details}</p>
+          <p style="color: #ffffff; margin: 0; white-space: pre-wrap;">${safeDetails}</p>
         </div>
       </div>
     `,
