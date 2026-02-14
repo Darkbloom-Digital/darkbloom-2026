@@ -42,12 +42,38 @@ export default function Navbar() {
     },
   });
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newsletterEmail) {
+  const newsletterMutation = useMutation({
+    mutationFn: async (email: string) => {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (response.status === 409) {
+        throw new Error("already_subscribed");
+      }
+      if (!response.ok) throw new Error("Failed to subscribe");
+      return response.json();
+    },
+    onSuccess: () => {
       toast.success("Thanks for subscribing!");
       setNewsletterEmail("");
       setNewsletterOpen(false);
+    },
+    onError: (error: Error) => {
+      if (error.message === "already_subscribed") {
+        toast.info("You're already subscribed!");
+        setNewsletterOpen(false);
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    },
+  });
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail) {
+      newsletterMutation.mutate(newsletterEmail);
     }
   };
 
@@ -267,7 +293,7 @@ export default function Navbar() {
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">Stay in the Loop</DialogTitle>
             <DialogDescription className="text-white/60">
-              Get monthly insights on Shopify trends, ecommerce tips, and exclusive offers.
+              Get monthly insights on web design trends, ecommerce tips, and exclusive offers.
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleNewsletterSubmit} className="space-y-4 mt-4">
@@ -283,9 +309,10 @@ export default function Navbar() {
             <Button 
               data-testid="button-newsletter-submit"
               type="submit" 
-              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-12"
+              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-12 border-0 cursor-pointer"
+              disabled={newsletterMutation.isPending}
             >
-              Subscribe
+              {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
             </Button>
           </form>
         </DialogContent>

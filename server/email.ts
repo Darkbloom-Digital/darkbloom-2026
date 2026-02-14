@@ -46,6 +46,23 @@ interface ContactEmailData {
   details: string;
 }
 
+export async function sendNewsletterNotification(email: string) {
+  const { client, fromEmail } = await getUncachableResendClient();
+
+  await client.emails.send({
+    from: fromEmail,
+    to: 'robdavis@darkbloomdigital.com',
+    subject: `New Newsletter Subscriber — ${email}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #18181b; color: #ffffff; border-radius: 12px;">
+        <h2 style="color: #e61e50; margin-bottom: 24px;">New Newsletter Subscriber</h2>
+        <p style="color: #a1a1aa; margin: 0 0 8px 0;">Email</p>
+        <p style="color: #ffffff; margin: 0;"><a href="mailto:${email}" style="color: #e61e50;">${email}</a></p>
+      </div>
+    `,
+  });
+}
+
 export async function sendContactNotification(data: ContactEmailData) {
   const { client, fromEmail } = await getUncachableResendClient();
 

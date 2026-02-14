@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type ContactInquiry, type InsertContactInquiry, users, contactInquiries } from "@shared/schema";
+import { type User, type InsertUser, type ContactInquiry, type InsertContactInquiry, type NewsletterSubscriber, type InsertNewsletterSubscriber, users, contactInquiries, newsletterSubscribers } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { db } from "../db/index";
 import { eq, desc } from "drizzle-orm";
@@ -9,6 +9,7 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   createContactInquiry(inquiry: InsertContactInquiry): Promise<ContactInquiry>;
   getAllContactInquiries(): Promise<ContactInquiry[]>;
+  createNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
 }
 
 class DatabaseStorage implements IStorage {
@@ -34,6 +35,11 @@ class DatabaseStorage implements IStorage {
 
   async getAllContactInquiries(): Promise<ContactInquiry[]> {
     return await db.select().from(contactInquiries).orderBy(desc(contactInquiries.createdAt));
+  }
+
+  async createNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber> {
+    const result = await db.insert(newsletterSubscribers).values(subscriber).returning();
+    return result[0];
   }
 }
 
