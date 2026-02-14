@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingParticles from "@/components/FloatingParticles";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, TrendingUp, Zap, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import austinImg from "@assets/optimized/austin-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
@@ -15,11 +15,6 @@ const caseStudies = [
     image: ntegImg,
     challenge: "Needed a professional web presence that clearly communicated their network solutions services to potential business clients.",
     solution: "Built a clean, modern website with clear service breakdowns, strong calls to action, and a design that instills trust and professionalism.",
-    results: [
-      { icon: <TrendingUp className="w-5 h-5" />, label: "Increased Inquiries", value: "3x" },
-      { icon: <Zap className="w-5 h-5" />, label: "Page Load Time", value: "< 2s" },
-      { icon: <Users className="w-5 h-5" />, label: "Monthly Visitors", value: "+120%" },
-    ],
     url: "https://nteg.net",
   },
   {
@@ -28,11 +23,6 @@ const caseStudies = [
     image: austinImg,
     challenge: "Needed a personal website that positioned him as an authority and drove business growth through an impactful online presence.",
     solution: "Designed a sleek personal brand site with focused messaging, social proof, and a conversion-optimized layout.",
-    results: [
-      { icon: <TrendingUp className="w-5 h-5" />, label: "Lead Generation", value: "2.5x" },
-      { icon: <Zap className="w-5 h-5" />, label: "Bounce Rate", value: "-40%" },
-      { icon: <Users className="w-5 h-5" />, label: "Engagement", value: "+85%" },
-    ],
     url: "https://austincalfee.com",
   },
   {
@@ -41,11 +31,6 @@ const caseStudies = [
     image: hattaboyImg,
     challenge: "A growing hat brand needed a custom Shopify store that reflected their personality and made purchasing seamless.",
     solution: "Built a custom Shopify theme with brand-aligned visuals, intuitive product navigation, and an optimized checkout flow.",
-    results: [
-      { icon: <TrendingUp className="w-5 h-5" />, label: "Conversion Rate", value: "+65%" },
-      { icon: <Zap className="w-5 h-5" />, label: "Cart Abandonment", value: "-30%" },
-      { icon: <Users className="w-5 h-5" />, label: "Returning Customers", value: "+50%" },
-    ],
     url: "https://hattaboy.com",
   },
 ];
@@ -109,16 +94,6 @@ export default function CaseStudies() {
                         <h4 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-1">Our Solution</h4>
                         <p className="text-white/50 text-sm leading-relaxed">{study.solution}</p>
                       </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4">
-                      {study.results.map((result, i) => (
-                        <div key={i} className="text-center p-3 rounded-xl bg-zinc-900 border border-white/10">
-                          <div className="text-[#e61e50] flex justify-center mb-1">{result.icon}</div>
-                          <p className="text-xl font-bold">{result.value}</p>
-                          <p className="text-white/40 text-xs">{result.label}</p>
-                        </div>
-                      ))}
                     </div>
                   </div>
                 </div>
