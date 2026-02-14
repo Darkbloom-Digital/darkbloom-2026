@@ -370,6 +370,17 @@ export default function Navbar() {
               {contactMutation.isPending ? "Sending..." : "Send Message"}
             </Button>
           </form>
+          <div className="shrink-0 flex items-center justify-center gap-4 pt-4 pb-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+              <FaInstagram className="w-5 h-5" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+              <FaFacebookF className="w-5 h-5" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+              <FaLinkedinIn className="w-5 h-5" />
+            </a>
+          </div>
         </SheetContent>
       </Sheet>
     </>
