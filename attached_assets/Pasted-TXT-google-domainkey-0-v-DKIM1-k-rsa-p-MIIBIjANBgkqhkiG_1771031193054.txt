@@ -1,0 +1,78 @@
+TXT	google._domainkey	0	"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr/XgTyKk0pX5svCeKDe0NY4zh91GYr1unyh5Gg9aAKXSbb1H/I3Vjp1amGUvrDjHWKfC1/2lp/KI1N/vtyyNHVXaWF1xDoZC5KwhXebP3brpggAqJJmZviMGOvlRKFTRcOyIlGCrU0QJXX5xkKiXF1uJkkENseBZ7wU/63gzcf2rZGsVcVrV0FMF/Pgw/WgcE9hSMouwnts99UiBZ3JxsOyOCSAQ2celiDdnCoMxvdf0umnCwGU6pTJecN0fvVoHoiO2YQlSJFwycF037ObCj9d/4Jb4ZEQ0+oaUv9Jgc4KvuwWwm5geLj+NJztjw2FxGtDctZInpE6uvUuSv0M/wQIDAQAB"	14400	
+Delete
+Edit
+TXT	resend._domainkey	0	"p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC46O/x7u7n2f9xi4dvNOobpNcEtOjDOTxl1PCK/+2QeYGa93AvApwtQxVY/yVMFzyzYbr7GUA1X5T3yRRQthcqdR1k15B0N0MRM8bT2xunVMwZiSo6JtoAno9c4Jlhfpd2uer+6HHyGyuMQBrNl+PGXXD+Gh8qIcH6ssuN92BhvwIDAQAB"	14400	
+Delete
+Edit
+CNAME	www	0	darkbloomdigital.com	300	
+Delete
+Edit
+TXT	send	0	"v=spf1 include:amazonses.com ~all"	3600	
+Delete
+Edit
+MX	send	10	feedback-smtp.us-east-1.amazonses.com	3600	
+Delete
+Edit
+TXT	_dmarc	0	"v=DMARC1; p=none"	3600	
+Delete
+Edit
+CAA	@	0	0 issue "comodoca.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issuewild "sectigo.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issuewild "pki.goog"	14400	
+Delete
+Edit
+CAA	@	0	0 issuewild "letsencrypt.org"	14400	
+Delete
+Edit
+CAA	@	0	0 issue "digicert.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issue "globalsign.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issue "letsencrypt.org"	14400	
+Delete
+Edit
+CAA	@	0	0 issue "pki.goog"	14400	
+Delete
+Edit
+CAA	@	0	0 issue "sectigo.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issuewild "globalsign.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issuewild "comodoca.com"	14400	
+Delete
+Edit
+CAA	@	0	0 issuewild "digicert.com"	14400	
+Delete
+Edit
+TXT	@	0	"replit-verify=a007b00b-1226-42c7-9b4f-e43bc72bd831"	14400	
+Delete
+Edit
+TXT	@	0	"v=spf1 include:_spf.google.com ~all"	14400	
+Delete
+Edit
+MX	@	10	ALT4.ASPMX.L.GOOGLE.COM	3600	
+Delete
+Edit
+MX	@	5	ALT2.ASPMX.L.GOOGLE.COM	3600	
+Delete
+Edit
+MX	@	10	ALT3.ASPMX.L.GOOGLE.COM	3600	
+Delete
+Edit
+MX	@	5	ALT1.ASPMX.L.GOOGLE.COM	3600	
+Delete
+Edit
+MX	@	1	ASPMX.L.GOOGLE.COM	3600	
+Delete
+Edit
+A	@	0	34.111.179.208	14400	
+Delete
+Edit
