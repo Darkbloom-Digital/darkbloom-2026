@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-6 md:pt-8 border-t border-white/10 text-xs text-white/30 text-center">
-          <p>&copy; 2025 Darkbloom Digital. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Darkbloom Digital. All rights reserved.</p>
         </div>
       </div>
     </footer>
