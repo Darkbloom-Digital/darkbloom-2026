@@ -157,7 +157,7 @@ export default function ContactPage() {
                     <label className="text-sm font-medium text-white/80">Current Website URL (if you have one)</label>
                     <Input
                       data-testid="input-contact-website-url"
-                      type="url"
+                      type="text"
                       placeholder="https://yourwebsite.com"
                       className="bg-white/5 border-white/10 focus-visible:ring-[#e61e50] text-white h-12"
                       {...register("websiteUrl")}
