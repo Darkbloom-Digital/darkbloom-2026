@@ -1,0 +1,6 @@
+# Source/design assets that are NOT imported by the app (only
+# attached_assets/optimized/* is referenced). Keep them in the repo but exclude
+# them from the Vercel deployment so the 43MB of raw PNGs/AIs aren't uploaded.
+attached_assets/*
+!attached_assets/optimized
+!attached_assets/optimized/**
