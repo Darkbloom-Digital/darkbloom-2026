@@ -6,7 +6,15 @@ import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  url: string;
+  image?: string;
+  gradient?: string;
+};
+
+const projects: Project[] = [
   {
     title: "Integrity Network Solutions",
     category: "Custom Website",
