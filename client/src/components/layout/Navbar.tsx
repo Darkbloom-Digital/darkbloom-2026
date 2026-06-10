@@ -1,11 +1,10 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, Bell, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, Mail, ChevronDown, Phone } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
@@ -16,9 +15,7 @@ import logo from "@assets/optimized/logo-wordmark.webp";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [newsletterOpen, setNewsletterOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
-  const [newsletterEmail, setNewsletterEmail] = useState("");
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<InsertContactInquiry>();
 
@@ -41,41 +38,6 @@ export default function Navbar() {
       toast.error("Failed to send message. Please try again.");
     },
   });
-
-  const newsletterMutation = useMutation({
-    mutationFn: async (email: string) => {
-      const response = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      if (response.status === 409) {
-        throw new Error("already_subscribed");
-      }
-      if (!response.ok) throw new Error("Failed to subscribe");
-      return response.json();
-    },
-    onSuccess: () => {
-      toast.success("Thanks for subscribing!");
-      setNewsletterEmail("");
-      setNewsletterOpen(false);
-    },
-    onError: (error: Error) => {
-      if (error.message === "already_subscribed") {
-        toast.info("You're already subscribed!");
-        setNewsletterOpen(false);
-      } else {
-        toast.error("Failed to subscribe. Please try again.");
-      }
-    },
-  });
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newsletterEmail) {
-      newsletterMutation.mutate(newsletterEmail);
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -218,14 +180,6 @@ export default function Navbar() {
             >
               <Mail size={18} />
             </button>
-            <button
-              data-testid="button-newsletter"
-              onClick={() => setNewsletterOpen(true)}
-              className="hidden md:flex w-10 h-10 rounded-full border border-white/20 items-center justify-center text-white/70 hover:text-[#e61e50] hover:border-[#e61e50] transition-colors"
-              aria-label="Subscribe to newsletter"
-            >
-              <Bell size={18} />
-            </button>
 
             {/* Mobile Toggle */}
             <button
@@ -290,16 +244,9 @@ export default function Navbar() {
               </div>
             ))}
 
-            <div className="flex gap-3 mt-6">
-              <Button 
-                variant="outline" 
-                className="flex-1 border-0 bg-white/10 h-12"
-                onClick={() => { setMobileMenuOpen(false); setNewsletterOpen(true); }}
-              >
-                <Bell size={16} className="mr-2" /> Newsletter
-              </Button>
-              <Button 
-                className="flex-1 bg-[#e61e50] border-0 h-12"
+            <div className="mt-6">
+              <Button
+                className="w-full bg-[#e61e50] border-0 h-12"
                 onClick={() => { setMobileMenuOpen(false); setContactOpen(true); }}
               >
                 <Mail size={16} className="mr-2" /> Contact
@@ -322,38 +269,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      {/* Newsletter Popup */}
-      <Dialog open={newsletterOpen} onOpenChange={setNewsletterOpen}>
-        <DialogContent className="bg-zinc-900 border-white/10 text-white max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Stay in the Loop</DialogTitle>
-            <DialogDescription className="text-white/60">
-
-              We send out our newsletter bi-weekly with actionable strategies to grow your brand online, boost conversions, and stay ahead of the competition.
-            </DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handleNewsletterSubmit} className="space-y-4 mt-4">
-            <Input
-              data-testid="input-newsletter-email"
-              type="email"
-              placeholder="your@email.com"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              required
-              className="bg-white/5 border-white/10 text-white h-12"
-            />
-            <Button 
-              data-testid="button-newsletter-submit"
-              type="submit" 
-              className="w-full bg-[#e61e50] hover:bg-[#c41540] h-12 border-0 cursor-pointer"
-              disabled={newsletterMutation.isPending}
-            >
-              {newsletterMutation.isPending ? "Subscribing..." : "Subscribe"}
-            </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
 
       {/* Contact Offcanvas */}
       <Sheet open={contactOpen} onOpenChange={setContactOpen}>
