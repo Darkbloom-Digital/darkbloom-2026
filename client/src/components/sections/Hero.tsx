@@ -15,10 +15,10 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
-            Real Websites <span className="text-gradient-fade">for</span> <br /><span className="text-[#e61e50]">Real Brands</span>
+            We engineer <span className="text-[#e61e50]">what's next.</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Custom websites and Shopify stores, done the right way.
+            Websites, ecommerce, and AI. Built to move your business forward.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact">
