@@ -51,7 +51,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mb-20"
+          className="text-center max-w-2xl mx-auto mb-20"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             What We <span className="text-[#e61e50]">Build</span>

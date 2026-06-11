@@ -31,14 +31,14 @@ export default function Reviews() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-6xl mx-auto mb-16"
+          className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold">
             What Our Clients <span className="text-[#e61e50]">Are Saying</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-x-12 gap-y-12 max-w-6xl mx-auto">
           {reviews.map((review, index) => (
             <motion.div
               key={index}
@@ -46,15 +46,15 @@ export default function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-8 rounded-2xl border border-white/5 hover:border-[#e61e50]/30 transition-all flex flex-col"
+              className="border-t border-white/10 pt-6 flex flex-col"
             >
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-5">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#e61e50] text-[#e61e50]" />
+                  <Star key={i} className="w-4 h-4 fill-[#e61e50] text-[#e61e50]" />
                 ))}
               </div>
               <p className="text-white/70 leading-relaxed flex-1">"{review.review}"</p>
-              <div className="mt-6 pt-4 border-t border-white/10">
+              <div className="mt-6">
                 <p className="font-semibold">{review.name}</p>
                 <p className="text-white/50 text-sm">{review.company}</p>
               </div>

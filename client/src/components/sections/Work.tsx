@@ -45,7 +45,7 @@ export default function Work() {
   return (
     <section id="work" className="py-24 section-divider">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto mb-16">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold">Our <span className="text-[#e61e50]">Work</span></h2>
         </div>
 
