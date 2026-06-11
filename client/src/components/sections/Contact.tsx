@@ -44,7 +44,7 @@ export default function Contact() {
     <section id="contact" className="py-24 relative overflow-hidden section-divider">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-16 border border-white/10 shadow-2xl">
-          <div className="text-center mb-12">
+          <div className="mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Ready to Scale?</h2>
             <p className="text-white/60">Tell us about your project. We'll build the strategy to get you there.</p>
           </div>

@@ -26,11 +26,10 @@ export default function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Meet the People <br />
-            <span className="text-[#e61e50]">Behind the Work</span>
+          <h2 className="text-4xl md:text-6xl font-bold">
+            Meet the People <span className="text-[#e61e50]">Behind the Work</span>
           </h2>
         </motion.div>
 

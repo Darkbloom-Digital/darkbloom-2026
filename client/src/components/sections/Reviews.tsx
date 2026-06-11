@@ -31,11 +31,10 @@ export default function Reviews() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-6xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What Our Clients <br />
-            <span className="text-[#e61e50]">Are Saying</span>
+          <h2 className="text-4xl md:text-6xl font-bold">
+            What Our Clients <span className="text-[#e61e50]">Are Saying</span>
           </h2>
         </motion.div>
 
