@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, ChevronDown, Phone, ArrowRight } from "lucide-react";
+import { Menu, X, Mail, ChevronDown, ArrowRight } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -86,15 +86,11 @@ export default function Navbar() {
       {/* Top Banner */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#e61e50] text-white text-sm">
         <div className="container mx-auto px-6 h-10 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <a href="tel:+14239511970" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Phone size={14} />
-              <span className="hidden sm:inline">423-951-1970</span>
-            </a>
-            <a href="mailto:robdavis@darkbloomdigital.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Mail size={14} />
-              <span className="hidden sm:inline">robdavis@darkbloomdigital.com</span>
-            </a>
+          <div className="flex items-center min-w-0">
+            <Link href="/contact" className="flex items-center hover:opacity-90 transition-opacity font-medium truncate">
+              <span className="hidden sm:inline">Now booking custom web, ecommerce, and AI builds</span>
+              <span className="sm:hidden">Now booking new projects</span>
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
