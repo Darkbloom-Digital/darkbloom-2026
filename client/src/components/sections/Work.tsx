@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import austinImg from "@assets/optimized/austin-portfolio.webp";
-import ntegImg from "@assets/optimized/nteg-portfolio.webp";
+import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import catechImg from "@assets/optimized/catech-portfolio.webp";
 
@@ -22,10 +22,10 @@ const projects: Project[] = [
     image: catechImg
   },
   {
-    title: "Integrity Network Solutions",
-    category: "Custom Website",
-    url: "https://nteg.net",
-    image: ntegImg
+    title: "Hatta Boy Hat Co",
+    category: "Shopify Store",
+    url: "https://hattaboy.com",
+    image: hattaboyImg
   },
   {
     title: "Austin Calfee",
