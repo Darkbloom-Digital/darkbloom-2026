@@ -62,9 +62,6 @@ export default function PerformanceAudit() {
                 className="group border-t border-white/10 pt-6 hover:border-[#e61e50]/60 transition-colors"
                 data-testid={`card-audit-step-${index}`}
               >
-                <span className="block font-sans text-sm font-medium tracking-widest text-[#e61e50] mb-4 tabular-nums">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{step.description}</p>
               </motion.div>

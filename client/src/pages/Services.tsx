@@ -81,9 +81,6 @@ export default function Services() {
                 className="group border-t border-white/10 pt-7 hover:border-[#e61e50]/60 transition-colors"
                 data-testid={`card-service-${index}`}
               >
-                <span className="block font-sans text-sm font-medium tracking-widest text-[#e61e50] mb-5 tabular-nums">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h3 className="text-2xl font-semibold mb-3" data-testid={`text-service-title-${index}`}>
                   <Title text={service.title} />
                 </h3>

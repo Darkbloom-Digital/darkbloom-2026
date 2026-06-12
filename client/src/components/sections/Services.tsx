@@ -71,9 +71,6 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="group border-t border-white/10 pt-7 hover:border-[#e61e50]/60 transition-colors"
             >
-              <span className="block font-sans text-sm font-medium tracking-widest text-[#e61e50] mb-5 tabular-nums">
-                {String(index + 1).padStart(2, "0")}
-              </span>
               <h3 className="text-2xl font-semibold mb-3">
                 <Title text={service.title} />
               </h3>

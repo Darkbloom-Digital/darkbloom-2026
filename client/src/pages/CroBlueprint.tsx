@@ -64,9 +64,6 @@ export default function CroBlueprint() {
                 className="group border-t border-white/10 pt-7 hover:border-[#e61e50]/60 transition-colors"
                 data-testid={`card-cro-pillar-${index}`}
               >
-                <span className="block font-sans text-sm font-medium tracking-widest text-[#e61e50] mb-4 tabular-nums">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h3 className="text-2xl font-semibold mb-3">{pillar.title}</h3>
                 <p className="text-white/50 leading-relaxed">{pillar.description}</p>
               </motion.div>
