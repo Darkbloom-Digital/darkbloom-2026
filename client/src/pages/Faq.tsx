@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "What's the AI work you offer?",
-    a: "Practical things, not hype. Chatbots that answer customer questions, automations that cut repetitive busywork, and AI features wired into your site or workflow, scoped to what actually moves the needle for your business.",
+    a: "Practical things wired into your site or workflow: chatbots that answer customer questions, automations that cut repetitive busywork, and AI features built around what your business actually needs.",
   },
 ];
 
