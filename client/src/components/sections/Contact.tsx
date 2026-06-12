@@ -199,7 +199,7 @@ export default function Contact() {
                 <span className="w-11 h-11 rounded-md bg-white/5 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5 text-[#e61e50]" />
                 </span>
-                Cleveland, TN
+                Tennessee, USA
               </div>
               </div>
             </div>

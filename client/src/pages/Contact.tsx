@@ -78,7 +78,7 @@ export default function ContactPage() {
                     <div className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-[#e61e50]" />
                     </div>
-                    <span>Cleveland, TN</span>
+                    <span>Tennessee, USA</span>
                   </div>
                 </div>
               </div>
