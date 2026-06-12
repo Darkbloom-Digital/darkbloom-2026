@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import austinImg from "@assets/optimized/austin-portfolio.webp";
 import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
-import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
+import catechImg from "@assets/optimized/catech-portfolio.webp";
 
 type Project = {
   title: string;
@@ -15,6 +15,12 @@ type Project = {
 };
 
 const projects: Project[] = [
+  {
+    title: "CA Tech USA",
+    category: "Ecommerce",
+    url: "https://catechusa.com",
+    image: catechImg
+  },
   {
     title: "Integrity Network Solutions",
     category: "Custom Website",
@@ -32,12 +38,6 @@ const projects: Project[] = [
     category: "SaaS Platform",
     url: "https://docpeeler.com",
     image: docpeelerImg
-  },
-  {
-    title: "Hatta Boy Hat Co",
-    category: "Shopify Store",
-    url: "https://hattaboy.com",
-    image: hattaboyImg
   },
 ];
 
