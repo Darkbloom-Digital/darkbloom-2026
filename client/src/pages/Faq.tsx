@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Do you help after launch, or just build and leave?",
-    a: "Both are on the table. We offer ongoing support, updates, and maintenance to keep your site fast, secure, and current after launch. No disappearing acts.",
+    a: "Whichever makes the most sense for your organization. We offer ongoing support tailored to your needs, from website updates and maintenance to conversion rate optimization, product additions, and running sales and promotions on your ecommerce shop.",
   },
   {
     q: "What's the AI work you offer?",
