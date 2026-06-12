@@ -16,8 +16,8 @@ const faqs = [
     a: "Custom websites, Shopify and ecommerce stores, AI tools and automations, and the occasional custom build that doesn't fit a neat category. If it lives on the web, there's a good chance we can build it.",
   },
   {
-    q: "Do you work with clients outside Cleveland?",
-    a: "Absolutely. We're based in Cleveland, TN, but we work remotely with clients anywhere. Most of the process happens over email, calls, and screen shares, so location is rarely an issue.",
+    q: "Do you only work with local clients?",
+    a: "Not at all. We work with clients wherever they are. The entire process runs smoothly over email, calls, and screen shares, so your location is never a barrier.",
   },
   {
     q: "I'm not technical. Is that a problem?",
