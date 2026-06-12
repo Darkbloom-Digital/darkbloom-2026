@@ -2,10 +2,29 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import austinImg from "@assets/optimized/austin-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
+import catechImg from "@assets/optimized/catech-portfolio.webp";
+
+const featured = {
+  title: "CA Tech USA",
+  category: "Ecommerce · Custom Shopify Build",
+  image: catechImg,
+  url: "https://catechusa.com",
+  intro: "A ground-up custom Shopify store and theme for CA Tech USA, a race-proven manufacturer of billet aftermarket parts for UTVs and side-by-sides.",
+  challenge: "CA Tech USA needed far more than a template. As a serious manufacturer with a deep, technical product catalog and a lifetime-warranty reputation to protect, they needed an ecommerce platform that could showcase the full range, earn the trust of hardcore off-road buyers, and actually convert.",
+  solution: "We designed and built a fully custom Shopify theme from the ground up. A structured catalog makes a large, technical product lineup easy to navigate, while a customer gallery, install-video library, and blog turn the store into a destination instead of just a checkout. The result is a fast, secure storefront that looks as rugged and dialed-in as the parts it sells.",
+  highlights: [
+    "Fully custom Shopify theme",
+    "Structured technical product catalog",
+    "Customer gallery for social proof",
+    "Install-video library",
+    "Content hub / blog",
+    "Fast, secure checkout",
+  ],
+};
 
 const caseStudies = [
   {
@@ -54,6 +73,61 @@ export default function CaseStudies() {
             </p>
           </motion.div>
 
+          {/* Featured case study */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl mx-auto mb-28"
+            data-testid="featured-casestudy"
+          >
+            <p className="text-[#e61e50] font-mono text-sm uppercase tracking-wider mb-4">Featured Project</p>
+            <a
+              href={featured.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-xl overflow-hidden border border-white/10 hover:border-[#e61e50]/40 transition-all aspect-video mb-8 relative"
+            >
+              <img src={featured.image} alt={featured.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="w-14 h-14 rounded-full bg-[#e61e50] flex items-center justify-center">
+                  <ArrowUpRight className="w-7 h-7 text-white" />
+                </span>
+              </div>
+            </a>
+
+            <div className="flex flex-wrap items-baseline justify-between gap-2 mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold">{featured.title}</h2>
+              <span className="text-white/40 font-mono text-sm uppercase tracking-wider">{featured.category}</span>
+            </div>
+            <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-3xl">{featured.intro}</p>
+
+            <div className="grid md:grid-cols-3 gap-x-12 gap-y-8">
+              <div className="md:col-span-2 space-y-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-2">The Challenge</h3>
+                  <p className="text-white/50 leading-relaxed">{featured.challenge}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-2">Our Solution</h3>
+                  <p className="text-white/50 leading-relaxed">{featured.solution}</p>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-3">What We Built</h3>
+                <ul className="space-y-2">
+                  {featured.highlights.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2.5 text-sm text-white/60">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#e61e50] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Other case studies */}
           <div className="space-y-20 max-w-5xl mx-auto">
             {caseStudies.map((study, index) => (
               <motion.div
@@ -62,11 +136,11 @@ export default function CaseStudies() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 data-testid={`card-casestudy-${index}`}
-                className="border-t border-white/10 pt-20 first:border-t-0 first:pt-0"
+                className="border-t border-white/10 pt-20"
               >
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
                   <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <a href={study.url} target="_blank" rel="noopener noreferrer" className="block rounded-2xl overflow-hidden border border-white/5 hover:border-[#e61e50]/30 transition-all aspect-video">
+                    <a href={study.url} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-white/5 hover:border-[#e61e50]/30 transition-all aspect-video">
                       <div
                         className="w-full h-full"
                         style={{
