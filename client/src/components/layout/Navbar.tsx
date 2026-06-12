@@ -269,9 +269,9 @@ export default function Navbar() {
 
       {/* Contact Offcanvas */}
       <Sheet open={contactOpen} onOpenChange={setContactOpen}>
-        <SheetContent className="bg-zinc-900 border-white/10 text-white w-full sm:max-w-lg flex flex-col h-full p-6">
+        <SheetContent className="bg-background border-white/10 text-white w-full sm:max-w-lg flex flex-col h-full p-6">
           <SheetHeader className="shrink-0">
-            <SheetTitle className="text-2xl font-bold text-white">Get in Touch</SheetTitle>
+            <SheetTitle className="text-3xl font-bold text-white">Get in <span className="text-[#e61e50]">Touch</span></SheetTitle>
             <SheetDescription className="text-white/60">
               Tell us about your project and we'll get back to you within 24 hours.
             </SheetDescription>
@@ -312,6 +312,7 @@ export default function Navbar() {
                 <option value="Custom Website" className="bg-zinc-900">Custom Website</option>
                 <option value="Shopify Store" className="bg-zinc-900">Shopify Store</option>
                 <option value="Website Redesign" className="bg-zinc-900">Website Redesign</option>
+                <option value="AI Solution" className="bg-zinc-900">AI Solution</option>
                 <option value="Ongoing Support" className="bg-zinc-900">Ongoing Support</option>
                 <option value="Other" className="bg-zinc-900">Other</option>
               </select>
@@ -347,13 +348,13 @@ export default function Navbar() {
             </Button>
           </form>
           <div className="shrink-0 flex items-center justify-center gap-4 pt-4 pb-2">
-            <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+            <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-md bg-white/5 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
               <FaInstagram className="w-5 h-5" />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+            <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-md bg-white/5 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
               <FaFacebookF className="w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
+            <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-md bg-white/5 flex items-center justify-center text-white/60 hover:bg-[#e61e50] hover:text-white transition-all">
               <FaLinkedinIn className="w-5 h-5" />
             </a>
           </div>
