@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import FloatingParticles from "@/components/FloatingParticles";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
@@ -38,7 +37,6 @@ const caseStudies = [
 export default function CaseStudies() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#e61e50] selection:text-white relative">
-      <FloatingParticles className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" count={10} />
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
@@ -56,7 +54,7 @@ export default function CaseStudies() {
             </p>
           </motion.div>
 
-          <div className="space-y-24 max-w-5xl mx-auto">
+          <div className="space-y-20 max-w-5xl mx-auto">
             {caseStudies.map((study, index) => (
               <motion.div
                 key={index}
@@ -64,7 +62,7 @@ export default function CaseStudies() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 data-testid={`card-casestudy-${index}`}
-                className="rounded-2xl border border-white/10 bg-zinc-900 p-8 md:p-10"
+                className="border-t border-white/10 pt-20 first:border-t-0 first:pt-0"
               >
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
                   <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
@@ -110,7 +108,7 @@ export default function CaseStudies() {
             <p className="text-white/60 text-lg mb-6">Want results like these?</p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#e61e50] hover:bg-[#c41540] text-white px-8 py-4 rounded-xl font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[#e61e50] hover:bg-[#c41540] text-white px-8 py-4 rounded-md font-medium transition-colors"
               data-testid="link-casestudies-cta"
             >
               Start Your Project <ArrowRight className="w-5 h-5" />

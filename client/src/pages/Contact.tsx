@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import FloatingParticles from "@/components/FloatingParticles";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,7 +35,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#e61e50] selection:text-white relative">
-      <FloatingParticles className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" count={10} />
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
@@ -65,19 +63,19 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold mb-6">Contact Info</h3>
                 <div className="space-y-5">
                   <a href="tel:+14239511970" className="flex items-center gap-4 text-white/60 hover:text-[#e61e50] transition-colors group" data-testid="link-phone">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center group-hover:bg-[#e61e50]/20 transition-colors">
+                    <div className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center group-hover:bg-[#e61e50]/20 transition-colors">
                       <Phone className="w-5 h-5 text-[#e61e50]" />
                     </div>
                     <span>423-951-1970</span>
                   </a>
                   <a href="mailto:robdavis@darkbloomdigital.com" className="flex items-center gap-4 text-white/60 hover:text-[#e61e50] transition-colors group" data-testid="link-email">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center group-hover:bg-[#e61e50]/20 transition-colors">
+                    <div className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center group-hover:bg-[#e61e50]/20 transition-colors">
                       <Mail className="w-5 h-5 text-[#e61e50]" />
                     </div>
                     <span>robdavis@darkbloomdigital.com</span>
                   </a>
                   <div className="flex items-center gap-4 text-white/60" data-testid="text-location">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-[#e61e50]" />
                     </div>
                     <span>Cleveland, TN</span>
@@ -88,13 +86,13 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
                 <div className="flex gap-3">
-                  <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-instagram">
+                  <a href="http://instagram.com/darkbloomdigital/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-instagram">
                     <FaInstagram size={20} />
                   </a>
-                  <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-facebook">
+                  <a href="https://www.facebook.com/profile.php?id=61579367123290" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-facebook">
                     <FaFacebookF size={18} />
                   </a>
-                  <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-linkedin">
+                  <a href="https://www.linkedin.com/company/darkbloom-digital" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center text-white/60 hover:text-[#e61e50] hover:bg-[#e61e50]/20 transition-all" data-testid="link-linkedin">
                     <FaLinkedinIn size={20} />
                   </a>
                 </div>
@@ -107,7 +105,7 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="lg:col-span-3"
             >
-              <div className="rounded-2xl border border-white/10 bg-zinc-900 p-8 md:p-10">
+              <div>
                 <form onSubmit={handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -179,7 +177,7 @@ export default function ContactPage() {
                     data-testid="button-contact-submit"
                     type="submit"
                     size="lg"
-                    className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-xl border-0 cursor-pointer"
+                    className="w-full bg-[#e61e50] hover:bg-[#c41540] text-white text-lg h-14 rounded-md border-0 cursor-pointer"
                     disabled={mutation.isPending}
                   >
                     {mutation.isPending ? "Sending..." : "Send Message"}

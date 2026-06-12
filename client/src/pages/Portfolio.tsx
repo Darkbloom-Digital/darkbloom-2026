@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import FloatingParticles from "@/components/FloatingParticles";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import austinImg from "@assets/optimized/austin-portfolio.webp";
@@ -60,7 +59,6 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#e61e50] selection:text-white relative">
-      <FloatingParticles className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none" count={10} />
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
@@ -84,7 +82,7 @@ export default function Portfolio() {
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 data-testid={`button-filter-${filter.toLowerCase().replace(/\s+/g, "-")}`}
-                className={`px-5 py-2 rounded-full text-sm font-medium uppercase tracking-wider transition-all duration-300 border ${
+                className={`px-5 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-all duration-300 border ${
                   activeFilter === filter
                     ? "bg-[#e61e50] border-[#e61e50] text-white"
                     : "bg-white/5 border-white/10 text-white/60 hover:border-[#e61e50]/50 hover:text-white"
