@@ -8,11 +8,19 @@ import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 import psImg from "@assets/optimized/ps-portfolio.webp";
+import catechImg from "@assets/optimized/catech-portfolio.webp";
 
 const filters = ["All", "Custom Website", "SaaS Platform", "Ecommerce"] as const;
 type Filter = (typeof filters)[number];
 
 const projects = [
+  {
+    title: "CA Tech USA",
+    category: "Ecommerce",
+    description: "A custom Shopify store and theme for an aftermarket UTV and off-road parts brand, built for fast browsing and a smooth checkout.",
+    url: "https://catechusa.com",
+    image: catechImg
+  },
   {
     title: "Integrity Network Solutions",
     category: "Custom Website",
