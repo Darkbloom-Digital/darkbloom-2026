@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "How much does a project cost?",
-    a: "Every project is quoted individually, because a one-page site and a custom Shopify build are very different animals. Tell us what you have in mind and we'll give you a clear, itemized quote with no surprises.",
+    a: "Every project is quoted individually, and we're happy to work with your budget. Tell us what you have in mind and roughly what you're looking to spend, and we'll put together a clear, itemized quote that fits as closely as we can.",
   },
   {
     q: "How long does a typical project take?",
