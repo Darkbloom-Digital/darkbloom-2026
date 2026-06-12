@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -149,7 +149,7 @@ export default function Navbar() {
                 )}
                 {link.dropdown && openDropdown === link.name && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
-                    <div className="bg-zinc-900 border border-white/10 rounded-lg py-2 min-w-[200px] shadow-xl">
+                    <div className="bg-card border border-white/10 rounded-lg py-2 min-w-[200px] shadow-xl">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.name}
@@ -172,10 +172,9 @@ export default function Navbar() {
             <button
               data-testid="button-contact-offcanvas"
               onClick={() => setContactOpen(true)}
-              className="hidden md:inline-flex items-center gap-2 h-10 px-5 rounded-md bg-[#e61e50] hover:bg-[#c41540] text-white text-sm font-medium transition-colors"
+              className="hidden md:inline-flex items-center h-10 px-5 rounded-md bg-[#e61e50] hover:bg-[#c41540] text-white text-sm font-medium transition-colors"
             >
               Let's Build
-              <ArrowRight size={16} />
             </button>
 
             {/* Mobile Toggle */}
@@ -192,7 +191,7 @@ export default function Navbar() {
 
       {/* Full-Screen Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-[60] bg-zinc-950 flex flex-col">
+        <div className="md:hidden fixed inset-0 z-[60] bg-background flex flex-col">
           <div className="flex items-center justify-between px-6 h-[120px] shrink-0">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="inline-flex items-center">
               <img src={logo} alt="Darkbloom Digital" className="h-12 w-auto object-contain mix-blend-screen" />
@@ -246,7 +245,7 @@ export default function Navbar() {
                 className="w-full bg-[#e61e50] border-0 h-12"
                 onClick={() => { setMobileMenuOpen(false); setContactOpen(true); }}
               >
-                <Mail size={16} className="mr-2" /> Contact
+                Let's Build
               </Button>
             </div>
           </div>
