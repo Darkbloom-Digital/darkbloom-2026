@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Mail, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, Mail, ChevronDown, Phone, ArrowRight } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -176,10 +176,10 @@ export default function Navbar() {
             <button
               data-testid="button-contact-offcanvas"
               onClick={() => setContactOpen(true)}
-              className="hidden md:flex w-10 h-10 rounded-full border border-white/20 items-center justify-center text-white/70 hover:text-[#e61e50] hover:border-[#e61e50] transition-colors"
-              aria-label="Contact us"
+              className="hidden md:inline-flex items-center gap-2 h-10 px-5 rounded-md bg-[#e61e50] hover:bg-[#c41540] text-white text-sm font-medium transition-colors"
             >
-              <Mail size={18} />
+              Let's Build
+              <ArrowRight size={16} />
             </button>
 
             {/* Mobile Toggle */}
