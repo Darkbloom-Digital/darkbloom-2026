@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Do you only work with local clients?",
-    a: "Not at all. We work with clients wherever they are. The entire process runs smoothly over email, calls, and screen shares, so your location is never a barrier.",
+    a: "Location is never a barrier. We work with clients wherever they are. The entire process runs smoothly over email, calls, and screen shares.",
   },
   {
     q: "I'm not technical. Is that a problem?",
