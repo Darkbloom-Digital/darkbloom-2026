@@ -13,7 +13,7 @@ import {
 const faqs = [
   {
     q: "What kinds of projects do you take on?",
-    a: "Custom websites, Shopify and ecommerce stores, AI tools and automations, and the occasional custom build that doesn't fit a neat category. If it lives on the web, there's a good chance we can build it.",
+    a: "Custom websites, Shopify and ecommerce stores, AI tools and automations, and any custom build that doesn't fit a neat category. If it lives on the web, we can figure out how to build it.",
   },
   {
     q: "Do you only work with local clients?",
