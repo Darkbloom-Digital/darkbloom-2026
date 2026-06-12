@@ -14,15 +14,19 @@ const featured = {
   image: catechImg,
   url: "https://catechusa.com",
   intro: "A ground-up custom Shopify store and theme for CA Tech USA, a race-proven manufacturer of billet aftermarket parts for UTVs and side-by-sides.",
-  challenge: "CA Tech USA needed far more than a template. As a serious manufacturer with a deep, technical product catalog and a lifetime-warranty reputation to protect, they needed an ecommerce platform that could showcase the full range, earn the trust of hardcore off-road buyers, and actually convert.",
-  solution: "We designed and built a fully custom Shopify theme from the ground up. A structured catalog makes a large, technical product lineup easy to navigate, while a customer gallery, install-video library, and blog turn the store into a destination instead of just a checkout. The result is a fast, secure storefront that looks as rugged and dialed-in as the parts it sells.",
+  challenge: "CA Tech USA had outgrown the theme they launched on. It was good enough to get started, but a catalog of nearly 500 products and a growing brand needed more than a bandaid fix. They needed a storefront built to scale, one that could carry their reputation and keep converting as they grow.",
+  solution: "We rebuilt the store on a fully custom Shopify theme designed for scale. A structured catalog tames 478 products into something easy to browse, while a customer gallery, install-video library, and blog turn the store into a destination instead of just a checkout. The result is a fast, secure platform that looks as rugged and dialed-in as the parts it sells, with room to grow.",
   highlights: [
     "Fully custom Shopify theme",
-    "Structured technical product catalog",
+    "Scalable catalog (478 products)",
     "Customer gallery for social proof",
     "Install-video library",
     "Content hub / blog",
     "Fast, secure checkout",
+  ],
+  stats: [
+    { value: "478", label: "Products in the catalog" },
+    { value: "1.5% → 1.72%", label: "Conversion rate in the first two weeks post-launch" },
   ],
 };
 
@@ -100,7 +104,17 @@ export default function CaseStudies() {
               <h2 className="text-3xl md:text-5xl font-bold">{featured.title}</h2>
               <span className="text-white/40 font-mono text-sm uppercase tracking-wider">{featured.category}</span>
             </div>
-            <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-3xl">{featured.intro}</p>
+            <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-3xl">{featured.intro}</p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 border-y border-white/10 py-8 mb-3 max-w-3xl">
+              {featured.stats.map((stat, i) => (
+                <div key={i}>
+                  <p className="text-2xl md:text-3xl font-bold text-[#e61e50] mb-1 tabular-nums">{stat.value}</p>
+                  <p className="text-sm text-white/50">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-white/30 mb-12 max-w-3xl">Early figures, measured roughly two weeks after launch.</p>
 
             <div className="grid md:grid-cols-3 gap-x-12 gap-y-8">
               <div className="md:col-span-2 space-y-6">
