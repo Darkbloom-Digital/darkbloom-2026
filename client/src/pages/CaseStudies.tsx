@@ -15,18 +15,18 @@ const featured = {
   url: "https://catechusa.com",
   intro: "A ground-up custom Shopify store and theme for CA Tech USA, a race-proven manufacturer of billet aftermarket parts for UTVs and side-by-sides.",
   challenge: "CA Tech USA had outgrown the theme they launched on. It was good enough to get started, but a catalog of nearly 500 products and a growing brand needed more than a bandaid fix. They needed a storefront built to scale, one that could carry their reputation and keep converting as they grow.",
-  solution: "We rebuilt the store on a fully custom Shopify theme designed for scale. A structured catalog tames 478 products into something easy to browse, while a customer gallery, install-video library, and blog turn the store into a destination instead of just a checkout. The result is a fast, secure platform that looks as rugged and dialed-in as the parts it sells, with room to grow.",
+  solution: "We rebuilt the store on a fully custom Shopify theme designed for scale. A structured catalog tames 478 products into something easy to browse, with fitment specs, install videos, and a customer gallery built in, so buyers can find the right part and learn to install it themselves. That self-service depth was a deliberate goal: give customers the answers up front, cut down on support calls and inquiries, and let people buy with confidence. The result is a fast, secure platform that looks as rugged as the parts it sells, with room to grow.",
   highlights: [
     "Fully custom Shopify theme",
     "Scalable catalog (478 products)",
+    "Fitment specs & install videos",
     "Customer gallery for social proof",
-    "Install-video library",
     "Content hub / blog",
     "Fast, secure checkout",
   ],
   stats: [
     { value: "478", label: "Products in the catalog" },
-    { value: "1.5% → 1.72%", label: "Conversion rate in the first two weeks post-launch" },
+    { value: "~15%", label: "Lift in conversion rate, first two weeks post-launch" },
   ],
 };
 
@@ -114,7 +114,7 @@ export default function CaseStudies() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-white/30 mb-12 max-w-3xl">Early figures, measured roughly two weeks after launch.</p>
+            <p className="text-xs text-white/30 mb-12 max-w-3xl">Early figures, measured roughly two weeks after launch (conversion rate up from ~1.5% to ~1.72%).</p>
 
             <div className="grid md:grid-cols-3 gap-x-12 gap-y-8">
               <div className="md:col-span-2 space-y-6">
