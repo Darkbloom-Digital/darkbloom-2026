@@ -12,6 +12,7 @@ const ContactPage = lazy(() => import("@/pages/Contact"));
 const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
 const PerformanceAudit = lazy(() => import("@/pages/PerformanceAudit"));
 const CroBlueprint = lazy(() => import("@/pages/CroBlueprint"));
+const Faq = lazy(() => import("@/pages/Faq"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function PageLoader() {
@@ -33,6 +34,7 @@ function Router() {
         <Route path="/case-studies" component={CaseStudies} />
         <Route path="/performance-audit" component={PerformanceAudit} />
         <Route path="/cro-blueprint" component={CroBlueprint} />
+        <Route path="/faq" component={Faq} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

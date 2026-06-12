@@ -73,6 +73,7 @@ export default function Navbar() {
       dropdown: [
         { name: "Shopify Performance Audit", href: "/performance-audit" },
         { name: "CRO Blueprint", href: "/cro-blueprint" },
+        { name: "FAQ", href: "/faq" },
       ]
     },
     { name: "Contact", href: "/contact" },
