@@ -1,7 +1,19 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { z } from "zod";
 import { Resend } from "resend";
 import { fromZodError } from "zod-validation-error";
-import { insertContactInquirySchema, type InsertContactInquiry } from "../shared/schema";
+
+// Inlined so this serverless function is fully self-contained (no imports
+// outside the api/ directory, which Vercel's bundler can fail to include).
+// Keep in sync with shared/schema.ts, which the frontend uses for its type.
+const insertContactInquirySchema = z.object({
+  name: z.string().min(1).max(200).trim(),
+  email: z.string().email().max(320).trim().toLowerCase(),
+  projectType: z.string().min(1).max(100).trim(),
+  websiteUrl: z.string().max(2000).trim().nullable().optional(),
+  details: z.string().min(1).max(5000).trim(),
+});
+type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
 
 const CONTACT_RECIPIENT = "robdavis@darkbloomdigital.com";
 
