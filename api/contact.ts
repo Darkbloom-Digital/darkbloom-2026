@@ -92,6 +92,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { error } = await resend.emails.send({
       from: fromEmail,
       to: CONTACT_RECIPIENT,
+      replyTo: data.email,
       subject: `New Inquiry from ${escapeHtml(data.name)} — ${escapeHtml(data.projectType)}`,
       html: buildContactEmailHtml(data),
     });
