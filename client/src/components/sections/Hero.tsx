@@ -7,6 +7,19 @@ import FloatingParticles from "@/components/FloatingParticles";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+      {/* Brand film: crimson ink resolving into a bloom. Plays once, then holds
+          the final frame (no loop). Hidden for reduced-motion users. */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0 motion-reduce:hidden"
+        src="/hero-bloom.mp4"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
+      {/* Readability + edge-blend overlay */}
+      <div className="absolute inset-0 z-0 bg-black/40 bg-gradient-to-b from-black/30 via-transparent to-background" />
       <FloatingParticles className="absolute inset-0 w-full h-full z-0" count={45} />
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
