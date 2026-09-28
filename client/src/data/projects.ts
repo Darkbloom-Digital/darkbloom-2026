@@ -32,6 +32,8 @@ export type Project = {
   built: string;
   highlights?: string[];
   results: string;
+  /** Heading for the results section; defaults to "Results". */
+  resultsHeading?: string;
   stats?: { value: string; label: string }[];
   statsNote?: string;
   quote?: Quote;
@@ -117,12 +119,15 @@ export const projects: Project[] = [
       "Content hub / blog",
       "Fast, secure checkout",
     ],
-    results: "[[ROBBIE: CA Tech results beyond the early conversion figure (traffic, SEO, current conversion rate)]]",
+    resultsHeading: "The Outcome",
+    results: "CA Tech now has a storefront that matches the brand's reputation and can grow with the catalog. Customers find the right part by fitment, see how it installs, and buy without calling in, which was the goal from day one. The store runs on a custom theme we built and still maintain, so new products, content, and improvements ship without starting over.",
+    // Verify the September figure on Oct 1 (month-end) and keep a dashboard screenshot on file.
     stats: [
-      { value: "478", label: "Products in the catalog" },
-      { value: "~15%", label: "Lift in conversion rate, first two weeks post-launch" },
+      { value: "2.18%", label: "Conversion rate, September 2026, top quarter for auto & vehicle stores on Shopify" },
+      { value: "478", label: "Products organized into a catalog built to scale" },
+      { value: "Ongoing", label: "Managing the store month to month since the custom theme launch" },
     ],
-    statsNote: "Early figures, measured roughly two weeks after launch (conversion rate up from ~1.5% to ~1.72%).",
+    statsNote: "Benchmark: Shogun H1 2026 Shopify benchmark, Autos & Vehicles category (median 1.26%, top quarter 1.98%+).",
     quote: caTechReview,
   },
   {

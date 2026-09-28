@@ -81,9 +81,9 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
               </section>
               {showResults && (
               <section>
-                <SectionHeading>Results</SectionHeading>
+                <SectionHeading>{project.resultsHeading ?? "Results"}</SectionHeading>
                 {project.stats && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6 border-y border-white/10 py-8 mb-3">
+                  <div className={`grid grid-cols-1 ${project.stats.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"} gap-x-10 gap-y-6 border-y border-white/10 py-8 mb-3`}>
                     {project.stats.map((stat) => (
                       <div key={stat.label}>
                         <p className="text-2xl md:text-3xl font-bold text-[#e61e50] mb-1 tabular-nums">{stat.value}</p>
