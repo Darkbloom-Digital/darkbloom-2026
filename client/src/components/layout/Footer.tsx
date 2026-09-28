@@ -1,7 +1,7 @@
 import logo from "@assets/optimized/logo-wordmark.webp";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import { Phone, Mail, MapPin } from "lucide-react";
-import Placeholder from "@/components/Placeholder";
+import Placeholder, { SHOW_PLACEHOLDERS } from "@/components/Placeholder";
 
 export default function Footer() {
   return (
@@ -22,10 +22,12 @@ export default function Footer() {
                Cleveland, TN · Serving Cleveland & Chattanooga
              </p>
              {/* Google Business Profile: replace the placeholder with an <a href={GBP_URL}> link. */}
-             <p className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
-               <FaGoogle className="w-3.5 h-3.5" aria-hidden="true" />
-               Find us on Google: <Placeholder>[[ROBBIE: GBP URL]]</Placeholder>
-             </p>
+             {SHOW_PLACEHOLDERS && (
+               <p className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
+                 <FaGoogle className="w-3.5 h-3.5" aria-hidden="true" />
+                 Find us on Google: <Placeholder>[[ROBBIE: GBP URL]]</Placeholder>
+               </p>
+             )}
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-3 md:gap-4">

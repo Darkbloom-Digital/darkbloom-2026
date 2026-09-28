@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import NotFound from "@/pages/not-found";
-import { Copy, isPlaceholder } from "@/components/Placeholder";
+import { Copy, hasContent } from "@/components/Placeholder";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Quote as QuoteIcon } from "lucide-react";
 import { getProject, projects } from "@/data/projects";
@@ -15,6 +15,8 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
   const project = getProject(params.slug);
   if (!project) return <NotFound />;
 
+  const showResults = !!project.stats || hasContent(project.results);
+  const showQuote = !!project.quote && project.quote.text.every(hasContent);
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 2);
 
   return (
@@ -58,14 +60,17 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
 
           <div className="grid md:grid-cols-3 gap-x-12 gap-y-10 mt-10">
             <div className="md:col-span-2 space-y-10">
-              <section>
-                <SectionHeading>The Problem</SectionHeading>
-                <p className="text-white/60 leading-relaxed"><Copy text={project.problem} /></p>
-              </section>
+              {hasContent(project.problem) && (
+                <section>
+                  <SectionHeading>The Problem</SectionHeading>
+                  <p className="text-white/60 leading-relaxed"><Copy text={project.problem} /></p>
+                </section>
+              )}
               <section>
                 <SectionHeading>What We Built</SectionHeading>
                 <p className="text-white/60 leading-relaxed"><Copy text={project.built} /></p>
               </section>
+              {showResults && (
               <section>
                 <SectionHeading>Results</SectionHeading>
                 {project.stats && (
@@ -79,8 +84,11 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
                   </div>
                 )}
                 {project.statsNote && <p className="text-xs text-white/30 mb-6">{project.statsNote}</p>}
-                <p className="text-white/60 leading-relaxed"><Copy text={project.results} /></p>
+                {hasContent(project.results) && (
+                  <p className="text-white/60 leading-relaxed"><Copy text={project.results} /></p>
+                )}
               </section>
+              )}
             </div>
             {project.highlights && (
               <aside>
@@ -97,12 +105,12 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
             )}
           </div>
 
-          {project.quote && (
+          {project.quote && showQuote && (
             <figure className="mt-20 border-t border-white/10 pt-12">
               <QuoteIcon className="w-8 h-8 text-[#e61e50] mb-6" aria-hidden="true" />
               <blockquote className="space-y-5 text-white/80 text-lg md:text-xl leading-relaxed font-light max-w-3xl">
                 {project.quote.text.map((para, i) => (
-                  <p key={i}>{isPlaceholder(para) ? <Copy text={para} /> : para}</p>
+                  <p key={i}><Copy text={para} /></p>
                 ))}
               </blockquote>
               <figcaption className="mt-8">

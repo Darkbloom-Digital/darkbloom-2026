@@ -1,6 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Placeholder from "@/components/Placeholder";
+import Placeholder, { SHOW_PLACEHOLDERS } from "@/components/Placeholder";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -266,9 +266,11 @@ export default function Trades() {
               <p>
                 Premier gets much of its work through Lowe's installation program but runs the business in Jobber, so every job was being entered twice. We connected the two: new work orders now land in Jobber automatically, and appointments scheduled in Jobber flow back to Lowe's.
               </p>
-              <p>
-                <Placeholder>[[ROBBIE: Premier results]]</Placeholder>
-              </p>
+              {SHOW_PLACEHOLDERS && (
+                <p>
+                  <Placeholder>[[ROBBIE: Premier results]]</Placeholder>
+                </p>
+              )}
             </div>
           </div>
         </section>
