@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ChevronDown, Star } from "lucide-react";
-import Placeholder, { Copy } from "@/components/Placeholder";
+import { Copy } from "@/components/Placeholder";
 import { caTechReview } from "@/data/projects";
 
 const reviews = [
@@ -16,13 +16,6 @@ const reviews = [
     company: "JFHenderson Law",
     review: "Excellent in every respect. Super competent, super fast, great communication, confirmed that every detail was as I hoped, and even offered some helpful suggestions for the best way to achieve my goals. He also identified some issues that were getting in the way of keeping my site updated and fixed them lickety split!",
     rating: 5,
-  },
-  {
-    name: "Emily Rodriguez",
-    company: "Craft & Co. Studio",
-    review: "They truly understood what we needed. The attention to detail and commitment to quality exceeded our expectations.",
-    rating: 5,
-    flag: "[[ROBBIE: is this a real client? If not, remove]]",
   },
 ];
 
@@ -92,7 +85,7 @@ export default function Reviews() {
           </details>
         </motion.figure>
 
-        <div className="grid md:grid-cols-3 gap-x-12 gap-y-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-12 max-w-5xl mx-auto">
           {reviews.map((review, index) => (
             <motion.div
               key={review.name}
@@ -109,11 +102,6 @@ export default function Reviews() {
               <div className="mt-6">
                 <p className="font-semibold">{review.name}</p>
                 <p className="text-white/50 text-sm">{review.company}</p>
-                {review.flag && (
-                  <div className="mt-2">
-                    <Placeholder>{review.flag}</Placeholder>
-                  </div>
-                )}
               </div>
             </motion.div>
           ))}

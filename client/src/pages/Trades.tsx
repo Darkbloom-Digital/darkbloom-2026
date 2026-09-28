@@ -262,8 +262,13 @@ export default function Trades() {
                 Read the case study <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="lg:col-span-7 text-white/60 leading-relaxed">
-              <Placeholder>[[ROBBIE: Premier details and results]]</Placeholder>
+            <div className="lg:col-span-7 text-white/60 leading-relaxed space-y-4">
+              <p>
+                Premier gets much of its work through Lowe's installation program but runs the business in Jobber, so every job was being entered twice. We connected the two: new work orders now land in Jobber automatically, and appointments scheduled in Jobber flow back to Lowe's.
+              </p>
+              <p>
+                <Placeholder>[[ROBBIE: Premier results]]</Placeholder>
+              </p>
             </div>
           </div>
         </section>

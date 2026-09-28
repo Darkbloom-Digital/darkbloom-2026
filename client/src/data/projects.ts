@@ -41,8 +41,8 @@ export const caTechReview: Quote = {
     "One moment that really stood out was when we needed a landing page built on very short notice for a campaign launch. Even though Robbie was on vacation, he made sure we were taken care of so our campaign could launch on time. That level of dedication speaks volumes about the way they do business.",
     "Beyond their expertise, they're simply great people to work with. They make you feel like you're working with friends while maintaining the highest level of professionalism. I would highly recommend Darkbloom Digital to businesses of any size. They truly meet you where you are and help position your business for long-term success.",
   ],
-  name: "[[ROBBIE: CA Tech reviewer's name]]",
-  role: "[[ROBBIE: reviewer's title]], CA Tech USA",
+  name: "Ashlin Hensley",
+  role: "Creative Marketing Manager, CA Tech USA",
 };
 
 export const projects: Project[] = [
@@ -50,17 +50,20 @@ export const projects: Project[] = [
     slug: "premier-construction",
     title: "Premier Construction",
     category: "Automation",
-    summary: "[[ROBBIE: one-line summary of the Premier Construction project]]",
+    summary: "A two-way integration that syncs Lowe's installation work orders with Jobber, so a home-improvement contractor stops re-entering every job by hand.",
     featured: true,
-    client: "Premier Construction",
-    problem: "[[ROBBIE: Premier's problem before working with us]]",
-    built: "[[ROBBIE: what we built for Premier]]",
-    results: "[[ROBBIE: Premier results and metrics]]",
-    quote: {
-      text: ["[[ROBBIE: Premier client quote, if available]]"],
-      name: "[[ROBBIE: name]]",
-      role: "[[ROBBIE: title]], Premier Construction",
-    },
+    client: "Premier Construction & Management, a home-improvement contractor and installer in Lowe's Installation Made Easy (IME) program",
+    problem: "Much of Premier's work comes through Lowe's Installation Made Easy (IME) program, but the business runs on Jobber. The two systems didn't talk to each other, so every new work order had to be keyed into Jobber by hand, and every appointment had to be copied back into IME. That meant double entry on every job, slower updates, and plenty of room for mistakes.",
+    built: "We built a custom two-way integration between Lowe's IME and Jobber. When a work order comes in or changes in IME, it lands in Jobber automatically as a client, property, and job, without creating duplicate clients, and each IME update is added to the job's timeline. When Premier schedules a visit in Jobber, the appointment is pushed back to IME, whether it's an estimate or an install. Jobs from outside the Lowe's program stay in Jobber only. It runs as a secure serverless service with status monitoring and alerts.",
+    highlights: [
+      "Lowe's IME work orders → Jobber jobs",
+      "Jobber scheduling → IME appointments",
+      "Automatic client de-duplication",
+      "IME updates as Jobber timeline notes",
+      "Non-Lowe's jobs kept separate",
+      "Monitoring and alerts",
+    ],
+    results: "[[ROBBIE: Premier results: is it live in production, and what has it changed (time saved, double entry eliminated, jobs synced)?]]",
   },
   {
     slug: "hatta-boy-hat-co",
