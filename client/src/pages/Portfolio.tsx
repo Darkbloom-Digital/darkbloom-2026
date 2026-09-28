@@ -5,7 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, type Category } from "@/data/projects";
 
-const filters = ["All", "Custom Website", "Ecommerce", "SaaS Platform", "Automation"] as const;
+const filters = ["All", "Custom Website", "Ecommerce", "SaaS Platform", "API Integration"] as const;
 type Filter = "All" | Category;
 
 export default function Portfolio() {

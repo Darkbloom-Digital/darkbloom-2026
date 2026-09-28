@@ -9,7 +9,7 @@ import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 import catechImg from "@assets/optimized/catech-portfolio.webp";
 
-export type Category = "Custom Website" | "Ecommerce" | "SaaS Platform" | "Automation";
+export type Category = "Custom Website" | "Ecommerce" | "SaaS Platform" | "API Integration";
 
 export type Quote = { text: string[]; name: string; role: string };
 
@@ -22,6 +22,8 @@ export type Project = {
   url?: string;
   image?: string;
   featured?: boolean;
+  /** Service tags shown on the case study page. */
+  services?: string[];
   client: string;
   problem: string;
   built: string;
@@ -49,21 +51,22 @@ export const projects: Project[] = [
   {
     slug: "premier-construction",
     title: "Premier Construction",
-    category: "Automation",
-    summary: "A two-way integration that syncs Lowe's installation work orders with Jobber, so a home-improvement contractor stops re-entering every job by hand.",
+    category: "API Integration",
+    summary: "A live two-way integration that keeps a Lowe's-contracted installer's work orders and Jobber in sync, so jobs no longer get re-keyed by hand.",
     featured: true,
-    client: "Premier Construction & Management, a home-improvement contractor and installer in Lowe's Installation Made Easy (IME) program",
-    problem: "Much of Premier's work comes through Lowe's Installation Made Easy (IME) program, but the business runs on Jobber. The two systems didn't talk to each other, so every new work order had to be keyed into Jobber by hand, and every appointment had to be copied back into IME. That meant double entry on every job, slower updates, and plenty of room for mistakes.",
-    built: "We built a custom two-way integration between Lowe's IME and Jobber. When a work order comes in or changes in IME, it lands in Jobber automatically as a client, property, and job, without creating duplicate clients, and each IME update is added to the job's timeline. When Premier schedules a visit in Jobber, the appointment is pushed back to IME, whether it's an estimate or an install. Jobs from outside the Lowe's program stay in Jobber only. It runs as a secure serverless service with status monitoring and alerts.",
+    services: ["API Integration", "Custom Development", "Managed Services", "Trades & Contractors"],
+    client: "Premier Construction, a Lowe's-contracted installer",
+    problem: "Premier's installer work arrives through one system, but the business runs on Jobber. Every job and every update had to be entered twice, by hand, and the owner was the bottleneck for scheduling and data entry. That meant hours lost to admin, and jobs that could slip or run late when something didn't get copied over.",
+    built: "We built a custom two-way API integration between Premier's installer platform and Jobber. New jobs and updates flow in both directions automatically: work orders land in Jobber as clients, properties, and jobs without creating duplicates, status updates are added to each job's timeline, and appointments scheduled in Jobber are pushed back automatically. Premier's own outside jobs stay in Jobber only. It's live in production, and we keep it running under an ongoing managed services plan covering maintenance, security, and support.",
     highlights: [
-      "Lowe's IME work orders → Jobber jobs",
-      "Jobber scheduling → IME appointments",
+      "Two-way sync, in real time",
+      "Jobs & updates flow both directions",
+      "Scheduling pushed back automatically",
       "Automatic client de-duplication",
-      "IME updates as Jobber timeline notes",
-      "Non-Lowe's jobs kept separate",
-      "Monitoring and alerts",
+      "Outside jobs kept separate",
+      "Managed maintenance, security & support",
     ],
-    results: "[[ROBBIE: Premier results: is it live in production, and what has it changed (time saved, double entry eliminated, jobs synced)?]]",
+    results: "The manual re-entry is gone. Jobs and updates land where they need to be without anyone copying them over, fewer jobs get missed or run late, and the owner's time is freed up for running the business instead of doing data entry.",
   },
   {
     slug: "hatta-boy-hat-co",

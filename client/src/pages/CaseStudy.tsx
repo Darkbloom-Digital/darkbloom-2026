@@ -35,6 +35,15 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
               <span className="text-white/40">Client: </span>
               <Copy text={project.client} />
             </p>
+            {project.services && (
+              <ul className="flex flex-wrap gap-2 mt-5" aria-label="Services">
+                {project.services.map((service) => (
+                  <li key={service} className="border border-white/10 bg-white/5 rounded-sm px-3 py-1 text-xs uppercase tracking-wider text-white/60">
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            )}
           </header>
 
           <div className="rounded-xl overflow-hidden border border-white/10 aspect-video mb-6 relative bg-black">

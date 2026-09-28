@@ -1,6 +1,5 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Placeholder, { SHOW_PLACEHOLDERS } from "@/components/Placeholder";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -264,13 +263,11 @@ export default function Trades() {
             </div>
             <div className="lg:col-span-7 text-white/60 leading-relaxed space-y-4">
               <p>
-                Premier gets much of its work through Lowe's installation program but runs the business in Jobber, so every job was being entered twice. We connected the two: new work orders now land in Jobber automatically, and appointments scheduled in Jobber flow back to Lowe's.
+                Premier is a Lowe's-contracted installer that runs its business on Jobber. Every job was being entered twice by hand, and the owner was stuck doing the data entry and scheduling. We built a live two-way integration that keeps both systems in sync automatically, and we manage it for them month to month.
               </p>
-              {SHOW_PLACEHOLDERS && (
-                <p>
-                  <Placeholder>[[ROBBIE: Premier results]]</Placeholder>
-                </p>
-              )}
+              <p>
+                The result: no more re-keying jobs, fewer missed or late jobs, and the owner's time back.
+              </p>
             </div>
           </div>
         </section>
