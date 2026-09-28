@@ -8,7 +8,8 @@
 import { projects } from "./data/projects";
 import { isPlaceholder } from "./components/Placeholder";
 
-export const SITE_URL = "https://darkbloomdigital.com";
+// www is the primary domain on Vercel (the bare domain 308-redirects to it).
+export const SITE_URL = "https://www.darkbloomdigital.com";
 export const OG_IMAGE = `${SITE_URL}/opengraph.jpg`;
 
 export type PageMeta = {
