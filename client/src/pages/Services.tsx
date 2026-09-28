@@ -117,7 +117,8 @@ export default function Services() {
                       <span className="text-sm text-white/40">{service.tagline}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent>
+                  {/* forceMount keeps collapsed answers in the prerendered HTML (hidden until opened) so crawlers can read them */}
+                  <AccordionContent forceMount>
                     <div className="grid md:grid-cols-2 gap-x-10 gap-y-6 pb-6">
                       <div>
                         <p className="text-white/60 leading-relaxed">{service.description}</p>

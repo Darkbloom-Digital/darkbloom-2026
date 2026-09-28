@@ -1,10 +1,11 @@
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense, useEffect } from "react";
 import Home from "@/pages/Home";
+import { applyPageMeta, getPageMeta } from "@/seo";
 
 const Portfolio = lazy(() => import("@/pages/Portfolio"));
 const Services = lazy(() => import("@/pages/Services"));
@@ -45,19 +46,23 @@ function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    applyPageMeta(getPageMeta(location));
   }, [location]);
   return null;
 }
 
-function App() {
+// ssrPath is only passed by entry-server.tsx when prerendering at build time.
+function App({ ssrPath }: { ssrPath?: string }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster position="top-right" theme="dark" />
-        <ScrollToTop />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <WouterRouter ssrPath={ssrPath}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster position="top-right" theme="dark" />
+          <ScrollToTop />
+          <Router />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </WouterRouter>
   );
 }
 

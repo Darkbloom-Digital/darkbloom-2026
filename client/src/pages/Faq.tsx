@@ -84,7 +84,8 @@ export default function Faq() {
                       {faq.q}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent>
+                  {/* forceMount keeps collapsed answers in the prerendered HTML (hidden until opened) so crawlers can read them */}
+                  <AccordionContent forceMount>
                     <p className="text-white/60 leading-relaxed pb-6 max-w-2xl">{faq.a}</p>
                   </AccordionContent>
                 </AccordionItem>
