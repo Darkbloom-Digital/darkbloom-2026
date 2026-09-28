@@ -73,7 +73,7 @@ export default function ContactPage() {
                     <div className="w-12 h-12 rounded-md bg-zinc-800 flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-[#e61e50]" />
                     </div>
-                    <span>Tennessee, USA</span>
+                    <span>Cleveland, TN · Serving Cleveland & Chattanooga</span>
                   </div>
                 </div>
               </div>
@@ -141,6 +141,8 @@ export default function ContactPage() {
                       <option value="Shopify Store" className="bg-zinc-900">Shopify Store</option>
                       <option value="Website Redesign" className="bg-zinc-900">Website Redesign</option>
                       <option value="Ongoing Support" className="bg-zinc-900">Ongoing Support</option>
+                      <option value="Missed calls / lead follow-up" className="bg-zinc-900">Missed calls / lead follow-up</option>
+                      <option value="Automation" className="bg-zinc-900">Automation</option>
                       <option value="Other" className="bg-zinc-900">Other</option>
                     </select>
                     {errors.projectType && <p className="text-red-400 text-xs">{errors.projectType.message}</p>}

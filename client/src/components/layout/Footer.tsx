@@ -1,6 +1,7 @@
 import logo from "@assets/optimized/logo-wordmark.webp";
-import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { Phone, Mail } from "lucide-react";
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
+import { Phone, Mail, MapPin } from "lucide-react";
+import Placeholder from "@/components/Placeholder";
 
 export default function Footer() {
   return (
@@ -15,6 +16,15 @@ export default function Footer() {
              />
              <p className="text-white/40 text-xs md:text-sm">
                Real websites for real brands.
+             </p>
+             <p className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
+               <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#e61e50]" aria-hidden="true" />
+               Cleveland, TN · Serving Cleveland & Chattanooga
+             </p>
+             {/* Google Business Profile: replace the placeholder with an <a href={GBP_URL}> link. */}
+             <p className="flex items-center gap-1.5 text-white/60 text-xs md:text-sm">
+               <FaGoogle className="w-3.5 h-3.5" aria-hidden="true" />
+               Find us on Google: <Placeholder>[[ROBBIE: GBP URL]]</Placeholder>
              </p>
           </div>
           

@@ -107,6 +107,8 @@ export default function Contact() {
                 <option value="Website Redesign" className="bg-zinc-900">Website Redesign</option>
                 <option value="AI Solution" className="bg-zinc-900">AI Solution</option>
                 <option value="Ongoing Support" className="bg-zinc-900">Ongoing Support</option>
+                <option value="Missed calls / lead follow-up" className="bg-zinc-900">Missed calls / lead follow-up</option>
+                <option value="Automation" className="bg-zinc-900">Automation</option>
                 <option value="Other" className="bg-zinc-900">Other</option>
               </select>
               {errors.projectType && <p className="text-red-400 text-xs">{errors.projectType.message}</p>}
@@ -199,7 +201,7 @@ export default function Contact() {
                 <span className="w-11 h-11 rounded-md bg-white/5 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5 text-[#e61e50]" />
                 </span>
-                Tennessee, USA
+                Cleveland, TN · Serving Cleveland & Chattanooga
               </div>
               </div>
             </div>
