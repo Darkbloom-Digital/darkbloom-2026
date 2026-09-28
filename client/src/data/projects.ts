@@ -7,7 +7,7 @@ import austinImg from "@assets/optimized/austin-portfolio.webp";
 import ntegImg from "@assets/optimized/nteg-portfolio.jpg";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
-import catechImg from "@assets/optimized/catech-portfolio.webp";
+import catechImg from "@assets/optimized/catech-portfolio.jpg";
 import premierImg from "@assets/optimized/premier-portfolio.jpg";
 
 export type Category = "Custom Website" | "Ecommerce" | "SaaS Platform" | "API Integration";
