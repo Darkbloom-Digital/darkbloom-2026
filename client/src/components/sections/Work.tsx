@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 
-// Featured projects come first in data/projects.ts, so this shows them first.
+// Shows the first four projects in data/projects.ts (ordered by priority).
 const homeProjects = projects.slice(0, 4);
 
 export default function Work() {
