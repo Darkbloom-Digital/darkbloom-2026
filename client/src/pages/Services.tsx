@@ -81,19 +81,14 @@ export default function Services() {
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 max-w-2xl mx-auto"
-          >
+          <div className="text-center mb-16 max-w-2xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="text-services-heading">
               What We <span className="text-[#e61e50]">Build</span>
             </h1>
             <p className="text-white/60 text-lg" data-testid="text-services-subtitle">
               Websites, ecommerce, and AI solutions, built to help your brand do more.
             </p>
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

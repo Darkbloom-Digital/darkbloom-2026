@@ -40,19 +40,14 @@ export default function CroBlueprint() {
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-20 max-w-2xl mx-auto"
-          >
+          <div className="text-center mb-20 max-w-2xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="text-cro-heading">
               CRO <span className="text-[#e61e50]">Blueprint</span>
             </h1>
             <p className="text-white/60 text-lg" data-testid="text-cro-subtitle">
               More traffic doesn't mean more sales. Our Conversion Rate Optimization blueprint turns the visitors you already have into paying customers.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-12 max-w-5xl mx-auto mb-24">
             {pillars.map((pillar, index) => (

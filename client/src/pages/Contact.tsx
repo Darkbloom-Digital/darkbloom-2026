@@ -38,19 +38,14 @@ export default function ContactPage() {
       <Navbar />
       <main className="relative z-10 pt-32 pb-24">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-4" data-testid="text-contact-heading">
               Get in <span className="text-[#e61e50]">Touch</span>
             </h1>
             <p className="text-white/60 text-lg max-w-2xl mx-auto" data-testid="text-contact-subtitle">
               Tell us about your project. We'll build the strategy to get you there.
             </p>
-          </motion.div>
+          </div>
 
           <div className="max-w-5xl mx-auto grid lg:grid-cols-5 gap-12">
             <motion.div
