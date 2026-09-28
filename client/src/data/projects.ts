@@ -4,7 +4,7 @@
 // Anything wrapped in [[ROBBIE: ...]] is a placeholder for real client
 // content. Do not replace these with made-up results, metrics, or quotes.
 import austinImg from "@assets/optimized/austin-portfolio.webp";
-import ntegImg from "@assets/optimized/nteg-portfolio.webp";
+import ntegImg from "@assets/optimized/nteg-portfolio.jpg";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 import catechImg from "@assets/optimized/catech-portfolio.webp";
@@ -153,12 +153,12 @@ export const projects: Project[] = [
     slug: "docpeeler",
     title: "DocPeeler",
     category: "SaaS Platform",
-    summary: "A software-as-a-service platform built with modern web technologies for streamlined document processing.",
+    summary: "A free web app that turns legal documents into plain English in seconds.",
     url: "https://docpeeler.com",
     image: docpeelerImg,
     client: "DocPeeler",
-    problem: "[[ROBBIE: the problem DocPeeler solves / why it was built]]",
-    built: "A software-as-a-service platform built with modern web technologies for streamlined document processing.",
+    problem: "Contracts, leases, and terms of service are written for lawyers, not for the people signing them. Most people either skim and hope for the best or pay someone to explain what they're agreeing to.",
+    built: "A free web app that turns legal jargon into plain English. Upload a PDF, DOCX, DOC, or TXT file, or paste the text, and get a clear, easy-to-understand version in seconds, with no signup required and documents processed securely.",
     results: "[[ROBBIE: DocPeeler results and metrics]]",
   },
 ];
