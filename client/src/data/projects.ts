@@ -8,6 +8,7 @@ import ntegImg from "@assets/optimized/nteg-portfolio.webp";
 import docpeelerImg from "@assets/optimized/docpeeler-portfolio.webp";
 import hattaboyImg from "@assets/optimized/hattaboy-portfolio.webp";
 import catechImg from "@assets/optimized/catech-portfolio.webp";
+import premierImg from "@assets/optimized/premier-portfolio.jpg";
 
 export type Category = "Custom Website" | "Ecommerce" | "SaaS Platform" | "API Integration";
 
@@ -20,6 +21,8 @@ export type Project = {
   /** Short line shown on the grid card. */
   summary: string;
   url?: string;
+  /** Link text for url; defaults to the domain. Use when we didn't build the site itself. */
+  urlLabel?: string;
   image?: string;
   featured?: boolean;
   /** Service tags shown on the case study page. */
@@ -53,6 +56,9 @@ export const projects: Project[] = [
     title: "Premier Construction",
     category: "API Integration",
     summary: "A live two-way integration that keeps a Lowe's-contracted installer's work orders and Jobber in sync, so jobs no longer get re-keyed by hand.",
+    url: "https://premierconstructionandmgtllc.com",
+    urlLabel: "Premier's website",
+    image: premierImg,
     featured: true,
     services: ["API Integration", "Custom Development", "Managed Services", "Trades & Contractors"],
     client: "Premier Construction, a Lowe's-contracted installer",

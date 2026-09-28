@@ -63,7 +63,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-[#e61e50] hover:text-white text-sm font-medium transition-colors mb-16"
             >
-              Visit {project.url.replace(/^https?:\/\//, "")} <ArrowUpRight className="w-4 h-4" />
+              Visit {project.urlLabel ?? project.url.replace(/^https?:\/\//, "")} <ArrowUpRight className="w-4 h-4" />
             </a>
           )}
 
