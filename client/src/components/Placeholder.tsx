@@ -9,3 +9,12 @@ export default function Placeholder({ children }: { children: ReactNode }) {
     </span>
   );
 }
+
+export function isPlaceholder(text: string | undefined): boolean {
+  return !!text && text.includes("[[ROBBIE:");
+}
+
+/** Renders plain text, or a Placeholder if the text is a [[ROBBIE: ...]] marker. */
+export function Copy({ text }: { text: string }) {
+  return isPlaceholder(text) ? <Placeholder>{text}</Placeholder> : <>{text}</>;
+}

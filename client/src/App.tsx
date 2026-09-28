@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { Switch, Route, Redirect, Router as WouterRouter, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
@@ -10,7 +10,7 @@ import { applyPageMeta, getPageMeta } from "@/seo";
 const Portfolio = lazy(() => import("@/pages/Portfolio"));
 const Services = lazy(() => import("@/pages/Services"));
 const ContactPage = lazy(() => import("@/pages/Contact"));
-const CaseStudies = lazy(() => import("@/pages/CaseStudies"));
+const CaseStudy = lazy(() => import("@/pages/CaseStudy"));
 const PerformanceAudit = lazy(() => import("@/pages/PerformanceAudit"));
 const CroBlueprint = lazy(() => import("@/pages/CroBlueprint"));
 const Trades = lazy(() => import("@/pages/Trades"));
@@ -33,7 +33,8 @@ function Router() {
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/services" component={Services} />
         <Route path="/contact" component={ContactPage} />
-        <Route path="/case-studies" component={CaseStudies} />
+        <Route path="/portfolio/:slug" component={CaseStudy} />
+        <Route path="/case-studies"><Redirect to="/portfolio" replace /></Route>
         <Route path="/performance-audit" component={PerformanceAudit} />
         <Route path="/cro-blueprint" component={CroBlueprint} />
         <Route path="/faq" component={Faq} />

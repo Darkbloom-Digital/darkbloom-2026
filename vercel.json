@@ -4,5 +4,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/case-studies",
+      "destination": "/portfolio",
+      "permanent": true
+    }
+  ]
 }

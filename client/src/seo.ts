@@ -5,6 +5,9 @@
 //    route's static HTML at build time, so crawlers see them without JS.
 //  - App.tsx keeps document.title / meta tags in sync on client-side navigation.
 
+import { projects } from "./data/projects";
+import { isPlaceholder } from "./components/Placeholder";
+
 export const SITE_URL = "https://darkbloomdigital.com";
 export const OG_IMAGE = `${SITE_URL}/opengraph.jpg`;
 
@@ -36,11 +39,6 @@ const pages: Record<string, Omit<PageMeta, "path">> = {
     description:
       "See the websites, Shopify stores, and platforms Darkbloom Digital has built, and read the case studies behind them.",
   },
-  "/case-studies": {
-    title: "Case Studies | Darkbloom Digital",
-    description:
-      "A deeper look at the challenges Darkbloom Digital has solved for clients and the results we delivered.",
-  },
   "/contact": {
     title: "Contact | Darkbloom Digital, Cleveland, TN Web Design & Development",
     description:
@@ -69,14 +67,27 @@ const notFound: Omit<PageMeta, "path"> = {
   noindex: true,
 };
 
+function caseStudyMeta(slug: string): Omit<PageMeta, "path"> | undefined {
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return undefined;
+  const summary = isPlaceholder(project.summary)
+    ? `How Darkbloom Digital helped ${project.title}: the problem, what we built, and the results.`
+    : `${project.summary} Read the case study: the problem, what we built, and the results.`;
+  return {
+    title: `${project.title} Case Study | ${project.category} | Darkbloom Digital`,
+    description: summary,
+  };
+}
+
 /** Every path that gets its own prerendered HTML file. */
 export function prerenderPaths(): string[] {
-  return Object.keys(pages);
+  return [...Object.keys(pages), ...projects.map((p) => `/portfolio/${p.slug}`)];
 }
 
 export function getPageMeta(path: string): PageMeta {
   const clean = path.length > 1 ? path.replace(/\/+$/, "") : path;
-  const meta = pages[clean];
+  const caseStudy = clean.match(/^\/portfolio\/([^/]+)$/);
+  const meta = caseStudy ? caseStudyMeta(caseStudy[1]) : pages[clean];
   return meta ? { path: clean, ...meta } : { path: clean, ...notFound };
 }
 

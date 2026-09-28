@@ -60,14 +60,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Trades", href: "/trades" },
-    { 
-      name: "Our Work", 
-      href: "/portfolio",
-      dropdown: [
-        { name: "Featured Projects", href: "/portfolio" },
-        { name: "Case Studies", href: "/case-studies" },
-      ]
-    },
+    { name: "Our Work", href: "/portfolio" },
     { 
       name: "Resources", 
       href: "/performance-audit",
