@@ -92,6 +92,11 @@ export function getPageMeta(path: string): PageMeta {
   return meta ? { path: clean, ...meta } : { path: clean, ...notFound };
 }
 
+// Google Business Profile: share link for visitors, and the stable
+// Knowledge Graph URL (kgmid) for structured data.
+export const GOOGLE_BUSINESS_URL = "https://share.google/Pcw7vSk9TtbP2JyOp";
+const GOOGLE_BUSINESS_KG_URL = "https://www.google.com/search?kgmid=/g/11zz2jgckc";
+
 // Footer / navbar social profiles, reused for JSON-LD sameAs.
 export const SOCIAL_LINKS = [
   "https://www.instagram.com/darkbloomdigital/",
@@ -136,7 +141,7 @@ export const structuredData = {
         { "@type": "City", name: "Chattanooga, TN" },
         { "@type": "State", name: "Tennessee" },
       ],
-      sameAs: SOCIAL_LINKS,
+      sameAs: [...SOCIAL_LINKS, GOOGLE_BUSINESS_KG_URL],
     },
   ],
 };
