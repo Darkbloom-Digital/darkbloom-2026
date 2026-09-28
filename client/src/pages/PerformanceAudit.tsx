@@ -2,7 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, Zap, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import HealthCheck from "@/components/sections/HealthCheck";
 
 const auditSteps = [
   {
@@ -82,24 +83,19 @@ export default function PerformanceAudit() {
             </div>
           </motion.div>
 
+        </div>
+        <div className="mt-20">
+          <HealthCheck />
+        </div>
+        <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-20"
+            className="text-center mt-4"
           >
-            <p className="text-white/60 text-lg mb-6">Try our free speed check tool</p>
+            <p className="text-white/60 text-lg mb-6">Want us to dig deeper than the automated check?</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              {/* TODO: swap to audit.darkbloomdigital.com once the custom subdomain is live */}
-              <a
-                href="https://performance-snapshot.replit.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-[#e61e50] text-white px-8 py-4 rounded-md font-medium transition-colors"
-                data-testid="link-performance-snapshot"
-              >
-                Run Free Snapshot <Zap className="w-5 h-5" />
-              </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#e61e50] hover:bg-[#c41540] text-white px-8 py-4 rounded-md font-medium transition-colors"

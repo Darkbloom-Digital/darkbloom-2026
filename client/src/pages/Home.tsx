@@ -5,6 +5,7 @@ import TradesCallout from "@/components/sections/TradesCallout";
 import Team from "@/components/sections/Team";
 import Work from "@/components/sections/Work";
 import Reviews from "@/components/sections/Reviews";
+import HealthCheck from "@/components/sections/HealthCheck";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
         <TradesCallout />
         <Team />
         <Work />
+        <HealthCheck />
         <Reviews />
         <Contact />
       </main>

@@ -4,7 +4,8 @@ import { z } from "zod";
 // original drizzle-zod schema's rules so the frontend forms and the
 // serverless function stay in sync.
 export const insertContactInquirySchema = z.object({
-  name: z.string().min(1).max(200).trim(),
+  // Optional so the homepage health-check form can capture just URL + email.
+  name: z.string().max(200).trim().optional().default(""),
   email: z.string().email().max(320).trim().toLowerCase(),
   projectType: z.string().min(1).max(100).trim(),
   websiteUrl: z.string().max(2000).trim().nullable().optional(),

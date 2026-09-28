@@ -7,7 +7,8 @@ import { fromZodError } from "zod-validation-error";
 // outside the api/ directory, which Vercel's bundler can fail to include).
 // Keep in sync with shared/schema.ts, which the frontend uses for its type.
 const insertContactInquirySchema = z.object({
-  name: z.string().min(1).max(200).trim(),
+  // Optional so the homepage health-check form can capture just URL + email.
+  name: z.string().max(200).trim().optional().default(""),
   email: z.string().email().max(320).trim().toLowerCase(),
   projectType: z.string().min(1).max(100).trim(),
   websiteUrl: z.string().max(2000).trim().nullable().optional(),
@@ -33,7 +34,7 @@ function escapeHtml(str: string): string {
 
 // Reuse of the original server/email.ts dark-themed table layout (brand red #e61e50).
 function buildContactEmailHtml(data: InsertContactInquiry): string {
-  const safeName = escapeHtml(data.name);
+  const safeName = escapeHtml(data.name || "Not provided");
   const safeEmail = escapeHtml(data.email);
   const safeProjectType = escapeHtml(data.projectType);
   const safeDetails = escapeHtml(data.details);
@@ -115,7 +116,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       from: fromEmail,
       to: CONTACT_RECIPIENT,
       replyTo: data.email,
-      subject: `New Inquiry from ${escapeHtml(data.name)} — ${escapeHtml(data.projectType)}`,
+      subject: `New Inquiry from ${escapeHtml(data.name || data.email)} — ${escapeHtml(data.projectType)}`,
       html: buildContactEmailHtml(data),
     });
 
