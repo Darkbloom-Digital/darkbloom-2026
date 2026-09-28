@@ -112,7 +112,6 @@ export const projects: Project[] = [
     summary: "A custom Shopify store that launched a brand-new Tennessee hat brand and has since sold 4,000+ hats to customers in 27 states.",
     url: "https://hattaboy.com",
     image: hattaboyImg,
-    featured: true,
     services: ["Custom Shopify Store", "Ecommerce", "In-Person & Event Sales", "Bulk & Wholesale Orders"],
     client: "Hatta Boy Co, a Tennessee hat brand (rope hats, patch hats, and custom work for individuals, businesses, and teams)",
     problem: "Hatta Boy was a brand-new company with no existing sales, customers, or storefront. They needed a store that could launch the brand from day one and grow with it: selling online, at events and in person, and in bulk to shops and businesses, all from one place.",
