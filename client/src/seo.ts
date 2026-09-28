@@ -26,6 +26,11 @@ const pages: Record<string, Omit<PageMeta, "path">> = {
     description:
       "Custom websites, Shopify and ecommerce builds, AI automations, custom development, performance and SEO, and ongoing support from Darkbloom Digital in Cleveland, TN.",
   },
+  "/trades": {
+    title: "Missed-Call Text-Back & AI Answering for Contractors | Darkbloom Digital",
+    description:
+      "Stop losing jobs to missed calls. Missed-call text-back, AI phone answering, Jobber and Housecall Pro lead capture, and review requests for HVAC, plumbing, roofing, electrical, and remodeling contractors.",
+  },
   "/portfolio": {
     title: "Our Work | Websites & Shopify Stores We've Built | Darkbloom Digital",
     description:

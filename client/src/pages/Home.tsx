@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
+import TradesCallout from "@/components/sections/TradesCallout";
 import Team from "@/components/sections/Team";
 import Work from "@/components/sections/Work";
 import Reviews from "@/components/sections/Reviews";
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="relative z-10">
         <Hero />
         <Services />
+        <TradesCallout />
         <Team />
         <Work />
         <Reviews />

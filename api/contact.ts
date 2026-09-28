@@ -12,6 +12,11 @@ const insertContactInquirySchema = z.object({
   projectType: z.string().min(1).max(100).trim(),
   websiteUrl: z.string().max(2000).trim().nullable().optional(),
   details: z.string().min(1).max(5000).trim(),
+  // Optional lead fields used by the /trades missed-call audit form.
+  phone: z.string().max(50).trim().optional(),
+  business: z.string().max(200).trim().optional(),
+  trade: z.string().max(100).trim().optional(),
+  software: z.string().max(100).trim().optional(),
 });
 type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
 
@@ -33,6 +38,22 @@ function buildContactEmailHtml(data: InsertContactInquiry): string {
   const safeProjectType = escapeHtml(data.projectType);
   const safeDetails = escapeHtml(data.details);
   const safeUrl = data.websiteUrl ? escapeHtml(data.websiteUrl) : null;
+  const extraRows = (
+    [
+      ["Business", data.business],
+      ["Phone", data.phone],
+      ["Trade", data.trade],
+      ["Current Software", data.software],
+    ] as const
+  )
+    .filter(([, value]) => value)
+    .map(
+      ([label, value]) => `<tr>
+            <td style="padding: 8px 0; color: #a1a1aa;">${label}</td>
+            <td style="padding: 8px 0; color: #ffffff;">${escapeHtml(value!)}</td>
+          </tr>`,
+    )
+    .join("");
 
   return `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #18181b; color: #ffffff; border-radius: 12px;">
@@ -54,6 +75,7 @@ function buildContactEmailHtml(data: InsertContactInquiry): string {
             <td style="padding: 8px 0; color: #a1a1aa;">Website URL</td>
             <td style="padding: 8px 0;"><a href="${safeUrl}" style="color: #e61e50;">${safeUrl}</a></td>
           </tr>` : ""}
+          ${extraRows}
         </table>
         <div style="margin-top: 20px; padding: 16px; background: #27272a; border-radius: 8px;">
           <p style="color: #a1a1aa; margin: 0 0 8px 0; font-size: 14px;">Details</p>
